@@ -1,0 +1,2 @@
+module WearticleHelper
+end

@@ -1,0 +1,1 @@
+# mongoid.add_language("*")
