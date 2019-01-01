@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token,:only => [:create]
 
   # APPID = 'wx6e1ee86184594b21'
-  APPSECRET = 'bc47b62ba51711164d3a95222e4055b8'
+  APPSECRET = '0bdc57d368b2a89761867ad5c395cefa'
   SERVER = 'https://api.weixin.qq.com/sns/jscode2session?'
 
   def index
