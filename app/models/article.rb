@@ -9,5 +9,5 @@ class Article
   field :agree,type: Integer
   field :commentList,type:Array
   field :avatarUrl,type:String
-  field :nickName,type:String
+  field :readTime,type:Integer
 end

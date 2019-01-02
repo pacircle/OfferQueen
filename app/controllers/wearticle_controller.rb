@@ -1,5 +1,5 @@
 class WearticleController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend]
+  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read]
 
   def index
     # 返回全部文章列表
@@ -72,14 +72,41 @@ class WearticleController < ApplicationController
     content = params[:content] || ''
     sub = params[:sub] || ''
     title = params[:title] || ''
-    if openid && openid.length>=0
+    if openid && openid.length>0
       if User.where(:_id => openid).length > 0
-        @article = Article.create(:userId => openid,:elite => 0, :content => content, :time => Time.now, :title => title,:sub => sub,:agree => 0,:commentList => [])
+        @article = Article.create(:userId => openid,:elite => 0,
+                                  :content => content,
+                                  :time => Time.now,
+                                  :title => title,
+                                  :sub => sub,
+                                  :agree => 0,
+                                  :commentList => [],
+                                  :readTime => 0)
         @article.save
         articleItem = {:id => @article._id,:time => '刚刚'}
         render json: {:state => 'success',:msg => '文章上传成功',:articleItem => articleItem},callback: params[:callback]
       else
         render json: {:state => 'error',:msg => '用户不存在'},callback: params[:callback]
+      end
+    else
+      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
+  end
+
+
+  def read
+    openid = params[:openid] || ''
+    articleId = params[:articleId] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      if articleId
+        @article_read = Article.where(:_id => BSON::ObjectId(articleId))
+        @article_read.each do |article|
+          readTime = article.readTime + 1
+          article.update(:readTime => readTime)
+        end
+        render json: {:state => 'success',:msg => '文章id成功'},callback: params[:callback]
+      else
+        render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
       end
     else
       render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]

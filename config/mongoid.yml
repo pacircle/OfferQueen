@@ -129,7 +129,7 @@ development:
     # Raise an error when defining a field with the same name as an
     # existing method. (default: false)
     # duplicate_fields_exception: false
-
+    # allow_dynamic_fields: true
     # Use Active Support's time zone in conversions. (default: true)
     # use_activesupport_time_zone: true
 
