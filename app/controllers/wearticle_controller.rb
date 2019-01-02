@@ -11,20 +11,93 @@ class WearticleController < ApplicationController
         case articleType
         when "time"
           p 'time'
+          articleList = []
           @articles = Article.all.sort_by{|u| u.time}.reverse()
-          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => @articles},callback: params[:callback]
+          @articles.each do |article|
+            user = User.where(:_id => article.userId)
+            article[:avatarUrl] = user[0].avatarUrl
+            article[:nickName] = user[0].nickName
+            article.time = article.time[0...article.time.length-6]
+            # if article.day < Time.now.day - 2
+            #   article.time = article.time[0...article.time.length-6]
+            # else if article.day < Time.now.day - 1
+            #        article.time = "前天"
+            #        # case article.hour
+            #        # when
+            #        # when
+            #        # when
+            #        # else
+            #        #
+            #        # end
+            #      else if article.day < Time.now.day
+            #             article.time = "昨天"
+            #           else
+            #             case Time.now.hour - article.hour
+            #             when 1
+            #               article.time = "昨天"
+            #             when 2
+            #             when 3
+            #             when 4
+            #             when 5
+            #             when 6
+            #             when 7
+            #             when 8
+            #             when 9
+            #             when 10
+            #             when 11
+            #             when 12
+            #             when 13
+            #             when 14
+            #             when 15
+            #             when 16
+            #             when 17
+            #             when 18
+            #             when 19
+            #             else
+            #
+            #             end
+            #           end
+            #      end
+            # end
+            articleList.push(article)
+          end
+          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
         when "comment"
           p 'comment'
+          articleList = []
           @articles = Article.all.sort_by{|u| u.commentList.length}.reverse()
-          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => @articles},callback: params[:callback]
+          @articles.each do |article|
+            user = User.where(:_id => article.userId)
+            article[:avatarUrl] = user[0].avatarUrl
+            article[:nickName] = user[0].nickName
+            article.time = article.time[0...article.time.length-6]
+            articleList.push(article)
+          end
+          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
         when "agree"
           p 'agree'
+          articleList = []
           @articles = Article.all.sort_by{|u| u.agree}.reverse()
-          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => @articles},callback: params[:callback]
+          @articles.each do |article|
+            user = User.where(:_id => article.userId)
+            article[:avatarUrl] = user[0].avatarUrl
+            article[:nickName] = user[0].nickName
+            article.time = article.time[0...article.time.length-6]
+            articleList.push(article)
+          end
+          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
         else
           p 'else time'
+          articleList = []
           @articles = Article.all.sort_by{|u| u.time}.reverse()
-          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => @articles},callback: params[:callback]
+          @articles.each do |article|
+            user = User.where(:_id => article.userId)
+            article[:avatarUrl] = user[0].avatarUrl
+            article[:nickName] = user[0].nickName
+            article.time = article.time[0...article.time.length-6]
+            articleList.push(article)
+          end
+          render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
         end
       else
         render json: {:state => 'error',:msg => '用户不存在'},callback: params[:callback]
@@ -55,7 +128,15 @@ class WearticleController < ApplicationController
           #     end
           #   end
           #   }
-          render json: {:state => 'success',:msg => '推荐文章获取成功',:recomInfos => reArticles},callback: params[:callback]
+          reArticleList = []
+          reArticles.each do |article|
+            user = User.where(:_id => article.userId)
+            article[:avatarUrl] = user[0].avatarUrl
+            article[:nickName] = user[0].nickName
+            article.time = article.time[0...article.time.length-6]
+            reArticleList.push(article)
+          end
+          render json: {:state => 'success',:msg => '推荐文章获取成功',:recomInfos => reArticleList},callback: params[:callback]
         else
           render json: {:state => 'success',:msg => '无推荐文章',:recomInfos => []},callback: params[:callback]
         end
@@ -74,7 +155,8 @@ class WearticleController < ApplicationController
     title = params[:title] || ''
     if openid && openid.length>0
       if User.where(:_id => openid).length > 0
-        @article = Article.create(:userId => openid,:elite => 0,
+        @article = Article.create(:userId => openid,
+                                  :elite => 1,
                                   :content => content,
                                   :time => Time.now,
                                   :title => title,

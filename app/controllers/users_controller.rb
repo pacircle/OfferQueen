@@ -4,7 +4,7 @@ require "uri"
 require "base64"
 
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create]
+  skip_before_action :verify_authenticity_token,:only => [:create,:read]
 
   # APPID = 'wx6e1ee86184594b21'
   APPSECRET = '0bdc57d368b2a89761867ad5c395cefa'
@@ -29,6 +29,23 @@ class UsersController < ApplicationController
 
   end
 
+  def read
+    # 获取阅读列表
+    p 'user read'
+    openid = params[:openid] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      readLists = []
+      user = User.where(:_id => openid)
+      readList = user[0].readList
+      readList.each do |article|
+        @article_read = Article.where(:_id => BSON::ObjectId(article))
+        readLists.push(@article_read)
+      end
+      render json: {:state => 'success',:msg => '获取阅读文章历史',:readList => readLists},callback: params[:callback]
+    else
+      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
+  end
 
   def wechatget(message)
     uri = URI.parse(SERVER)

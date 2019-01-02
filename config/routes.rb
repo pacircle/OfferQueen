@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     post '/login', to: 'users#create'
     post '/article', to: 'users#article'
     post '/article/add',to:'wearticle#create'
+    post '/article/read',to: 'users#read'
   end
 
   scope :article do
