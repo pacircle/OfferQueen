@@ -103,8 +103,12 @@ class WearticleController < ApplicationController
         @article_read.each do |article|
           readTime = article.readTime + 1
           article.update(:readTime => readTime)
+          user = User.where(:_id => openid)
+          readList = user[0].readList
+          readList.push(articleId)
+          user.update(:readList => readList)
         end
-        render json: {:state => 'success',:msg => '文章id成功'},callback: params[:callback]
+        render json: {:state => 'success',:msg => '文章阅读更新成功'},callback: params[:callback]
       else
         render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
       end

@@ -18,5 +18,6 @@ class User
   field :answerList,type:Array
   field :agreeList,type:Array
   field :collectList,type:Array
+  field :readList,type:Array
 
 end

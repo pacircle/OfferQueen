@@ -64,7 +64,8 @@ class UsersController < ApplicationController
                          :articleList => [],
                          :commentList => [],
                          :answerList => [],
-                         :agreeList => [])
+                         :agreeList => [],
+                         :readList => [])
              render json: {:state => 'success',:msg => '用户注册成功',:openid => openid},callback: params[:callback]
            else
              render json: {:state => 'success',:msg => '用户已注册',:openid => openid},callback: params[:callback]
