@@ -1,5 +1,5 @@
 class WearticleController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read]
+  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read,:agree,:collect]
 
   def index
     # 返回全部文章列表
@@ -200,4 +200,50 @@ class WearticleController < ApplicationController
   end
 
 
+  def agree
+    # 文章点赞
+    openid = params[:openid] || ''
+    articleId = params[:articleId] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      if articleId
+        @article_read = Article.where(:_id => BSON::ObjectId(articleId))
+        @article_read.each do |article|
+          agree = article.agree + 1
+          article.update(:agree => agree)
+          user = User.where(:_id => openid)
+          agreeList = user[0].agreeList
+          agreeList.push(articleId)
+          user.update(:agreeList => agreeList)
+        end
+        render json: {:state => 'success',:msg => '文章点赞更新成功'},callback: params[:callback]
+      else
+        render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
+      end
+    else
+      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
+  end
+
+
+  def collect
+    # 文章收藏
+    openid = params[:openid] || ''
+    articleId = params[:articleId] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      if articleId
+        @article_read = Article.where(:_id => BSON::ObjectId(articleId))
+        @article_read.each do |article|
+          user = User.where(:_id => openid)
+          collectList = user[0].collectList
+          collectList.push(articleId)
+          user.update(:collectList => collectList)
+        end
+        render json: {:state => 'success',:msg => '文章收藏更新成功'},callback: params[:callback]
+      else
+        render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
+      end
+    else
+      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
+  end
 end

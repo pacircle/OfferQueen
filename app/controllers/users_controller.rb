@@ -4,7 +4,7 @@ require "uri"
 require "base64"
 
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:read]
+  skip_before_action :verify_authenticity_token,:only => [:create,:read,:article,:collect]
 
   # APPID = 'wx6e1ee86184594b21'
   APPSECRET = '0bdc57d368b2a89761867ad5c395cefa'
@@ -26,7 +26,22 @@ class UsersController < ApplicationController
   end
 
   def article
-
+    # 获取用户的文章列表
+    p 'user article'
+    openid = params[:openid] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      user_article = []
+      users = User.where(:_id => openid)
+      Article.where(:userId => openid).each do |item|
+        item[:avatarUrl] = users[0].avatarUrl
+        item[:nickName] = users[0].nickName
+        item.time = item.time[0...item.time.length-6]
+        user_article.push(item)
+      end
+      render json: {:state => 'success',:msg => '获取用户文章',:articleList => user_article},callback: params[:callback]
+    else
+      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
   end
 
   def read
@@ -37,15 +52,57 @@ class UsersController < ApplicationController
       readLists = []
       user = User.where(:_id => openid)
       readList = user[0].readList
-      readList.each do |article|
-        @article_read = Article.where(:_id => BSON::ObjectId(article))
-        readLists.push(@article_read)
+      if readList.length > 0
+        readList.each do |article|
+          article_read = Article.where(:_id => BSON::ObjectId(article))
+          article_read.each do |item|
+            p item
+            users = User.where(:_id => item.userId)
+            item[:avatarUrl] = users[0].avatarUrl
+            item[:nickName] = users[0].nickName
+            item.time = item.time[0...item.time.length-6]
+            readLists.push(item)
+          end
+          # user = User.where(:_id => article_read[0].userId)
+          # article[:avatarUrl] = user[0].avatarUrl
+          # article[:nickName] = user[0].nickName
+          # article.time = article.time[0...article.time.length-6]
+          # readLists.push(article_read)
+        end
       end
       render json: {:state => 'success',:msg => '获取阅读文章历史',:readList => readLists},callback: params[:callback]
     else
       render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
     end
   end
+
+
+  def collect
+    # 获取用户收藏列表
+    p 'user collect'
+    openid = params[:openid] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      collectLists = []
+      user = User.where(:_id => openid)
+      collectList = user[0].collectList
+      if collectList.length > 0
+        collectList.each do |article|
+          article_read = Article.where(:_id => BSON::ObjectId(article))
+          article_read.each do |item|
+            users = User.where(:_id => item.userId)
+            item[:avatarUrl] = users[0].avatarUrl
+            item[:nickName] = users[0].nickName
+            item.time = item.time[0...item.time.length-6]
+            collectLists.push(item)
+          end
+        end
+      end
+      render json: {:state => 'success',:msg => '获取收藏文章',:collectList => collectLists},callback: params[:callback]
+    else
+      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
+  end
+
 
   def wechatget(message)
     uri = URI.parse(SERVER)
@@ -82,7 +139,8 @@ class UsersController < ApplicationController
                          :commentList => [],
                          :answerList => [],
                          :agreeList => [],
-                         :readList => [])
+                         :readList => [],
+                         :collectList => [])
              render json: {:state => 'success',:msg => '用户注册成功',:openid => openid},callback: params[:callback]
            else
              render json: {:state => 'success',:msg => '用户已注册',:openid => openid},callback: params[:callback]

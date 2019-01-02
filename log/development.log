@@ -9710,3 +9710,1032 @@ MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.003s
 Completed 200 OK in 39ms (Views: 3.3ms)
 
 
+Started POST "/user/article/read?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 21:14:50 +0800
+Processing by UsersController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 53ms
+
+
+  
+NoMethodError (undefined method `userId' for #<Mongoid::Criteria:0x00007f8e2927e4d0>):
+  
+app/controllers/users_controller.rb:43:in `block in read'
+app/controllers/users_controller.rb:41:in `each'
+app/controllers/users_controller.rb:41:in `read'
+Started POST "/user/article/read?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 21:16:04 +0800
+Processing by UsersController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2c8c3e38cad3efde20a1bc')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 14ms
+
+
+  
+NoMethodError (undefined method `userId' for nil:NilClass):
+  
+app/controllers/users_controller.rb:43:in `block in read'
+app/controllers/users_controller.rb:41:in `each'
+app/controllers/users_controller.rb:41:in `read'
+Started POST "/user/article/read?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 21:18:10 +0800
+Processing by UsersController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2c8c3e38cad3efde20a1bc')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb55c38cad3f3da6a9a24')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb55838cad3f3da6a9a23')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb53138cad3f3da6a9a20')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 18ms (Views: 0.3ms)
+
+
+Started POST "/user/article/read?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 21:23:23 +0800
+Processing by UsersController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2c8c3e38cad3efde20a1bc')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb55c38cad3f3da6a9a24')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 19ms
+
+
+  
+NoMethodError (undefined method `time' for "5c2cb55c38cad3f3da6a9a24":String):
+  
+app/controllers/users_controller.rb:48:in `block (2 levels) in read'
+app/controllers/users_controller.rb:43:in `block in read'
+app/controllers/users_controller.rb:41:in `each'
+app/controllers/users_controller.rb:41:in `read'
+Started POST "/user/article/read?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 21:24:21 +0800
+Processing by UsersController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2c8c3e38cad3efde20a1bc')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb55c38cad3f3da6a9a24')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 17ms
+
+
+  
+NoMethodError (undefined method `time' for "5c2cb55c38cad3f3da6a9a24":String):
+  
+app/controllers/users_controller.rb:48:in `block (2 levels) in read'
+app/controllers/users_controller.rb:43:in `block in read'
+app/controllers/users_controller.rb:41:in `each'
+app/controllers/users_controller.rb:41:in `read'
+Started POST "/user/article/read?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 21:24:32 +0800
+Processing by UsersController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2c8c3e38cad3efde20a1bc')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb55c38cad3f3da6a9a24')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb55838cad3f3da6a9a23')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb53138cad3f3da6a9a20')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 33ms (Views: 0.9ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-02 21:24:59 +0800
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132"}, "jsCode"=>"023iyVpU1HQUuX0lFioU1ihSpU1iyVpY", "appId"=>"wxdb08cdf310b2243c", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 145ms (Views: 0.4ms)
+
+
+Started POST "/article/recom" for 127.0.0.1 at 2019-01-02 21:25:00 +0800
+Processing by WearticleController#recommend as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 19ms (Views: 1.6ms)
+
+
+Started POST "/article/all" for 127.0.0.1 at 2019-01-02 21:25:03 +0800
+Processing by WearticleController#index as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleType"=>"time", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleType"=>"time"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.003s
+Completed 200 OK in 34ms (Views: 1.8ms)
+
+
+Started POST "/article/read" for 127.0.0.1 at 2019-01-02 21:35:33 +0800
+Processing by WearticleController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c2cb50238cad3f3da6a9a1f", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c2cb50238cad3f3da6a9a1f"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb50238cad3f3da6a9a1f')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c2cb50238cad3f3da6a9a1f')}, "u"=>{"$set"=>{"readTime"=>1}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"readList"=>["5c2c8c3e38cad3efde20a1bc", "5c2cb55c38cad3f3da6a9a24", "5c2cb55838cad3f3da6a9a23", "5c2cb54138cad3f3da6a9a21", "5c2cb53138cad3f3da6a9a20", "5c2...
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 25ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 21:49:47 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/user/article/agree"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/article/agree?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 21:50:44 +0800
+  
+AbstractController::ActionNotFound (The action 'agree' could not be found for UsersController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/article/agree?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 21:52:57 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c2cb54138cad3f3da6a9a21"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}, "u"=>{"$set"=>{"agree"=>1}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 20ms (Views: 0.3ms)
+
+
+Started POST "/user/article/agree?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 22:03:24 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c2cb54138cad3f3da6a9a21"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}, "u"=>{"$set"=>{"agree"=>2}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"agreeList"=>["5c2cb54138cad3f3da6a9a21"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+Completed 200 OK in 18ms (Views: 0.2ms)
+
+
+Started POST "/user/article/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 22:05:49 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/user/article/collect"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/article/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 22:06:07 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/user/article/collect"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/article/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 22:06:30 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c2cb54138cad3f3da6a9a21"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 19ms
+
+
+  
+NoMethodError (undefined method `push' for nil:NilClass):
+  
+app/controllers/wearticle_controller.rb:238:in `block in collect'
+app/controllers/wearticle_controller.rb:235:in `collect'
+Started POST "/user/login" for 127.0.0.1 at 2019-01-02 22:09:36 +0800
+Overwriting existing field _id in class User.
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132"}, "jsCode"=>"033lFiOs1nBSwm06coPs1v5sOs1lFiOS", "appId"=>"wxdb08cdf310b2243c", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "nickName"=>"会飞@_@鱼", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132", "city"=>"",...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.057s
+Completed 200 OK in 330ms (Views: 0.4ms)
+
+
+Started POST "/article/recom" for 127.0.0.1 at 2019-01-02 22:09:37 +0800
+Processing by WearticleController#recommend as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 23ms (Views: 1.4ms)
+
+
+Started POST "/user/article/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs&articleId=5c2cb54138cad3f3da6a9a21" for 127.0.0.1 at 2019-01-02 22:09:57 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c2cb54138cad3f3da6a9a21"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"collectList"=>["5c2cb54138cad3f3da6a9a21"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 6ms (Views: 0.2ms)
+
+
+Started POST "/user/articlet?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 22:51:09 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/user/articlet"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/article?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 22:51:21 +0800
+Processing by UsersController#article as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/article?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 22:51:45 +0800
+Processing by UsersController#article as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+No template found for UsersController#article, rendering head :no_content
+Completed 204 No Content in 133ms
+
+
+Started POST "/user/article?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 22:58:21 +0800
+Processing by UsersController#article as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 192ms
+
+
+  
+NameError (undefined local variable or method `users' for #<UsersController:0x00007f8e270f8f18>):
+  
+app/controllers/users_controller.rb:35:in `block in article'
+app/controllers/users_controller.rb:34:in `article'
+Started POST "/user/article?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 22:59:18 +0800
+Processing by UsersController#article as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 29ms (Views: 3.0ms)
+
+
+Started POST "/user/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 23:04:19 +0800
+Processing by UsersController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.2) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.2) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.2) lib/active_support/callbacks.rb:179:in `block (2 levels) in halting_and_conditional'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.2) lib/active_support/callbacks.rb:180:in `block in halting_and_conditional'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.2) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.2) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 23:04:37 +0800
+Processing by UsersController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 41ms (Views: 0.9ms)
+
+
+Started POST "/user/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 23:05:46 +0800
+Processing by UsersController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 19ms (Views: 0.4ms)
+
+
+Started POST "/user/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 23:07:47 +0800
+Processing by UsersController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 18ms (Views: 0.4ms)
+
+
+Started POST "/user/collect?openid=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-02 23:08:07 +0800
+Processing by UsersController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.005s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c2cb54138cad3f3da6a9a21')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.004s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 35ms (Views: 0.8ms)
+
+
+Started POST "/article/all" for 127.0.0.1 at 2019-01-02 23:20:27 +0800
+Processing by WearticleController#index as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleType"=>"time", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleType"=>"time"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.005s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.004s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+Completed 200 OK in 199ms (Views: 17.6ms)
+
+
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:20:33 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 8ms
+
+
+  
+NameError (uninitialized constant Comments):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:21:09 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 14ms
+
+
+  
+NameError (uninitialized constant Comments):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:21:37 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 27ms
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'Comments' which is not allowed on the model Article.
+summary:
+  Without including Mongoid::Attributes::Dynamic in your model and the attribute does not already exist in the attributes hash, attempting to call Article#Comments= for it is not allowed. This is also triggered by passing the attribute to any method that accepts an attributes hash, and is raised instead of getting a NoMethodError.
+resolution:
+  You can include Mongoid::Attributes::Dynamic if you expect to be writing values for undefined fields often.):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:24:40 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 33ms
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'Comments' which is not allowed on the model Article.
+summary:
+  Without including Mongoid::Attributes::Dynamic in your model and the attribute does not already exist in the attributes hash, attempting to call Article#Comments= for it is not allowed. This is also triggered by passing the attribute to any method that accepts an attributes hash, and is raised instead of getting a NoMethodError.
+resolution:
+  You can include Mongoid::Attributes::Dynamic if you expect to be writing values for undefined fields often.):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:25:22 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 18ms
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'Comments' which is not allowed on the model Article.
+summary:
+  Without including Mongoid::Attributes::Dynamic in your model and the attribute does not already exist in the attributes hash, attempting to call Article#Comments= for it is not allowed. This is also triggered by passing the attribute to any method that accepts an attributes hash, and is raised instead of getting a NoMethodError.
+resolution:
+  You can include Mongoid::Attributes::Dynamic if you expect to be writing values for undefined fields often.):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:26:37 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 13ms
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'Comments' which is not allowed on the model Article.
+summary:
+  Without including Mongoid::Attributes::Dynamic in your model and the attribute does not already exist in the attributes hash, attempting to call Article#Comments= for it is not allowed. This is also triggered by passing the attribute to any method that accepts an attributes hash, and is raised instead of getting a NoMethodError.
+resolution:
+  You can include Mongoid::Attributes::Dynamic if you expect to be writing values for undefined fields often.):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:26:58 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 15ms
+
+
+  
+NameError (uninitialized constant Comments):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:29:46 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 17ms
+
+
+  
+Mongoid::Errors::UnknownAttribute (
+message:
+  Attempted to set a value for 'Comments' which is not allowed on the model Article.
+summary:
+  Without including Mongoid::Attributes::Dynamic in your model and the attribute does not already exist in the attributes hash, attempting to call Article#Comments= for it is not allowed. This is also triggered by passing the attribute to any method that accepts an attributes hash, and is raised instead of getting a NoMethodError.
+resolution:
+  You can include Mongoid::Attributes::Dynamic if you expect to be writing values for undefined fields often.):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:30:44 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 26ms
+
+
+  
+NameError (uninitialized constant Comments):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:31:49 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 19ms
+
+
+  
+NameError (wrong constant name comment):
+  
+app/controllers/wearticle_controller.rb:158:in `create'
+Started POST "/user/article/add" for 127.0.0.1 at 2019-01-02 23:37:50 +0800
+Processing by WearticleController#create as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "content"=>"sdgagasdgasgd", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd"}}
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"articles", "documents"=>[{"_id"=>BSON::ObjectId('5c2cdacf38cad3f56b21f9f0'), "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "elite"=>1, "content"=>"sdgagasdgasgd", "time"=>"2019-01-02 23:37:51 +0800", "title"=>"fagsdg", "sub"=>"sdgagasdgasgd", ...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.002s
+Completed 200 OK in 21ms (Views: 0.7ms)
+
+
