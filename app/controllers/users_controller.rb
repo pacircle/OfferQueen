@@ -137,7 +137,7 @@ class UsersController < ApplicationController
                          :password => '',
                          :articleList => [],
                          :commentList => [],
-                         :answerList => [],
+                         # :answerList => [],
                          :agreeList => [],
                          :readList => [],
                          :collectList => [])

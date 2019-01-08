@@ -161,7 +161,7 @@ class WearticleController < ApplicationController
                                   :time => Time.now,
                                   :title => title,
                                   :sub => sub,
-                                  :agree => 0,
+                                  :agree => 10,
                                   :commentList => [],
                                   :readTime => 0)
         @article.save

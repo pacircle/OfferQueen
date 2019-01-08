@@ -13,7 +13,7 @@ class User
   field :inviteMember,type: Integer
   field :phone,type:Integer
   field :password,type:String
-  # field :articleList,type:Array
+  field :articleList,type:Array
   field :commentList,type:Array
   # field :answerList,type:Array
   field :agreeList,type:Array

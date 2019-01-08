@@ -15,7 +15,7 @@ class CommentController < ApplicationController
           article.update(:commentList => commentList)
         end
         commentItem = {:id => @comment._id,:time => '刚刚'}
-        render json: {:state => 'success',:msg => '评论更新成功',:commentItem => commentItem},callback: params[:callback]
+        render json: {:state => 'success',:msg => '添加评论成功',:commentItem => commentItem},callback: params[:callback]
       else
         render json: {:state => 'fail',:msg => '文章不存在成功'},callback: params[:callback]
       end

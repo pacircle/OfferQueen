@@ -27,15 +27,15 @@ Rails.application.routes.draw do
 
   scope :super do
     # 获取全部用户信息
-    post '/user', to: 'super#user'
-    post '/index', to: 'super#index'
-    post '/create',to: 'super#create'
-    post '/login',to: 'super#login'
+    get '/user', to: 'super#user'
+    get '/index', to: 'super#index'
+    get '/create',to: 'super#create'
+    get '/login',to: 'super#login'
 
 
-    post '/delete',to: 'super#delete'
-    post '/article', to: 'super#article'
-    post '/comment',to: 'super#comment'
+    get '/delete',to: 'super#delete'
+    get '/article', to: 'super#article'
+    get '/comment',to: 'super#comment'
 
   end
 end
