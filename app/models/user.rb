@@ -15,7 +15,7 @@ class User
   field :password,type:String
   # field :articleList,type:Array
   field :commentList,type:Array
-  field :answerList,type:Array
+  # field :answerList,type:Array
   field :agreeList,type:Array
   field :collectList,type:Array
   field :readList,type:Array

@@ -15,11 +15,27 @@ Rails.application.routes.draw do
     post '/article/read',to: 'wearticle#read'
     post '/article/agree',to: 'wearticle#agree'
     post '/article/collect',to: 'wearticle#collect'
+    post '/article/comment',to: 'comment#create'
+    post '/article/comment/delete',to: 'comment#delete'
   end
 
   scope :article do
     # 获取文章接口
     post '/recom',to: 'wearticle#recommend'
     post '/all',to:'wearticle#index'
+  end
+
+  scope :super do
+    # 获取全部用户信息
+    post '/user', to: 'super#user'
+    post '/index', to: 'super#index'
+    post '/create',to: 'super#create'
+    post '/login',to: 'super#login'
+
+
+    post '/delete',to: 'super#delete'
+    post '/article', to: 'super#article'
+    post '/comment',to: 'super#comment'
+
   end
 end
