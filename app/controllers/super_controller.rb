@@ -51,6 +51,14 @@ class SuperController < ApplicationController
     password = params[:password] || ''
     if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
       @users = User.all
+      articles = []
+      @users.each do |use|
+        use.articleList.each do |article|
+          art = Article.where(:_id => BSON::ObjectId(article._id.object_id))
+          articles.push(art)
+        end
+        use[:articles] = articles
+      end
       data = {:userInfos => @users}
       render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => data},callback: params[:callback]
     else

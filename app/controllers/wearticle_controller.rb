@@ -153,7 +153,7 @@ class WearticleController < ApplicationController
     content = params[:content] || ''
     sub = params[:sub] || ''
     title = params[:title] || ''
-    if openid && openid.length>0
+    if openid && openid.length > 0
       if User.where(:_id => openid).length > 0
         @article = Article.create(:userId => openid,
                                   :elite => 1,
@@ -165,6 +165,17 @@ class WearticleController < ApplicationController
                                   :commentList => [],
                                   :readTime => 0)
         @article.save
+        use = User.where(:_id => openid)
+        article = use[0].articleList
+        article.push(@article._id.object_id.to_s)
+        use.update(:articleList => article)
+        # use.each do |us|
+        #   article = us.articleList
+        #   p article
+        #   article.push(@article._id.object_id)
+        #   us.articleList = article
+        #   p us.articleList
+        # end
         articleItem = {:id => @article._id,:time => '刚刚'}
         render json: {:state => 'success',:msg => '文章上传成功',:articleItem => articleItem},callback: params[:callback]
       else
