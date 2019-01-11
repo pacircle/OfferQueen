@@ -38,9 +38,9 @@ class UsersController < ApplicationController
         item.time = item.time[0...item.time.length-6]
         user_article.push(item)
       end
-      render json: {:state => 'success',:msg => '获取用户文章',:articleList => user_article},callback: params[:callback]
+      render json: {:state => 200,:status => 'success',:msg => '获取用户文章',:articleList => user_article},callback: params[:callback]
     else
-      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '用户id错误'},callback: params[:callback]
     end
   end
 
@@ -70,9 +70,9 @@ class UsersController < ApplicationController
           # readLists.push(article_read)
         end
       end
-      render json: {:state => 'success',:msg => '获取阅读文章历史',:readList => readLists},callback: params[:callback]
+      render json: {:state => 200,:status =>  'success',:msg => '获取阅读文章历史',:readList => readLists},callback: params[:callback]
     else
-      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '用户id错误'},callback: params[:callback]
     end
   end
 
@@ -97,9 +97,9 @@ class UsersController < ApplicationController
           end
         end
       end
-      render json: {:state => 'success',:msg => '获取收藏文章',:collectList => collectLists},callback: params[:callback]
+      render json: {:state => 200,:status => 'success',:msg => '获取收藏文章',:collectList => collectLists},callback: params[:callback]
     else
-      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '用户id错误'},callback: params[:callback]
     end
   end
 

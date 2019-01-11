@@ -1,7 +1,8 @@
 class SuperController < ApplicationController
   skip_before_action :verify_authenticity_token,:only => [:login,:create,:delete,:user,:index,:article,:comment]
 
-  # def login
+
+    # def login
   #   name = params[:name] || ''
   #   password = params[:password] || ''
   #   if name && password && name.length > 0 && password.length > 0 && SuperUser.where(:name => name).length > 0
@@ -24,7 +25,7 @@ class SuperController < ApplicationController
         end
       end
     else
-      render json: {:status => 'fail',:msg => '用户不存在'},callback: params[:callback]
+      render json: {:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
@@ -51,9 +52,9 @@ class SuperController < ApplicationController
     if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
       @users = User.all
       data = {:userInfos => @users}
-      render json: {:status => 'success',:msg => '获取用户信息成功',:data => data},callback: params[:callback]
+      render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => data},callback: params[:callback]
     else
-      render json: {:state => 'fail',:msg => '用户验证失败'},callback: params[:callback]
+      render json: {:state => 400,:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
@@ -74,9 +75,9 @@ class SuperController < ApplicationController
         articleList.push(article)
       end
       data = {:articleInfos => articleList}
-      render json: {:state => 'success',:msg => '文章列表获取成功',:data => data},callback: params[:callback]
+      render json: {:state => 200,:status => 'success',:msg => '文章列表获取成功',:data => data},callback: params[:callback]
     else
-      render json: {:state => 'fail',:msg => '用户验证失败'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
     # if User.where(:_id => openid).length > 0 || articleType.length >0
     #   articleList = []
@@ -121,7 +122,7 @@ class SuperController < ApplicationController
         render json: {:status => 'fail',:msg => '用户不存在'},callback: params[:callback]
       end
     else
-      render json: {:state => 'fail',:msg => '用户验证失败'},callback: params[:callback]
+      render json: {:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
@@ -141,12 +142,12 @@ class SuperController < ApplicationController
         comments.each do |comment|
           comment.delete
         end
-        render json: {:state => 'success',:msg => '文章删除成功'},callback: params[:callback]
+        render json: {:state => 200,:status => 'success',:msg => '文章删除成功'},callback: params[:callback]
       else
-        render json: {:state => 'fail',:msg => '文章不存在'},callback: params[:callback]
+        render json: {:state => 400,:status => 'fail',:msg => '文章不存在'},callback: params[:callback]
       end
     else
-      render json: {:state => 'fail',:msg => '用户验证失败'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
@@ -165,15 +166,41 @@ class SuperController < ApplicationController
           end
           comment.delete
         end
-        render json: {:status => 'success',:msg => '删除评论成功'},callback: params[:callback]
+        render json: {:state => 200,:status => 'success',:msg => '删除评论成功'},callback: params[:callback]
       else
-        render json: {:status => 'fail',:msg => '评论不存在'},callback: params[:callback]
+        render json: {:state => 400,:status => 'fail',:msg => '评论不存在'},callback: params[:callback]
       end
     else
-      render json: {:state => 'fail',:msg => '用户验证失败'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
 
+  def oneUser
+    name = params[:name] || ''
+    password = params[:password] || ''
+    userId = params[:userId] || ''
+    if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
+      if userId && userId.length > 0 && User.where(:_id => userId).length > 0
+        users = User.where(:_id => userId)
+        users.each do |user|
+          data = {:userInfo => user}
+          render json: {:state => 200,:status => 'success',:msg => '获取单个用户信息成功',:data => data},callback: params[:callback]
+        end
+      else
+        render json: {:state => 400,:status => 'fail',:msg => '用户不存在'},callback: params[:callback]
+      end
+    else
+      render json: {:state => 400, :status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+    end
+  end
+
+
+  def elite
+    ## 文章加为精华帖
+    name = params[:name] || ''
+    password = params[:password] || ''
+    articleId = params[:userId] || ''
+  end
 
 end

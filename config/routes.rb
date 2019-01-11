@@ -11,11 +11,16 @@ Rails.application.routes.draw do
     post '/read',to: 'users#read'
     post '/collect',to: 'users#collect'
     post '/article', to: 'users#article'
+
     post '/article/add',to:'wearticle#create'
+    post '/article/delete',to:'wearticle#delete'
+
+
     post '/article/read',to: 'wearticle#read'
     post '/article/agree',to: 'wearticle#agree'
     post '/article/collect',to: 'wearticle#collect'
-    post '/article/comment',to: 'comment#create'
+    ## 用户评论的添加和删除
+    post '/article/comment/index',to: 'comment#create'
     post '/article/comment/delete',to: 'comment#delete'
   end
 
@@ -27,15 +32,25 @@ Rails.application.routes.draw do
 
   scope :super do
     # 获取全部用户信息
-    get '/user', to: 'super#user'
+    get '/user/all', to: 'super#user'
+    # 获取某个用户信息
+    get '/user/one', to: 'super#oneUser'
+
+
     get '/index', to: 'super#index'
+    # get '/index', to: 'super#index'
+
     get '/create',to: 'super#create'
     get '/login',to: 'super#login'
 
-
-    get '/delete',to: 'super#delete'
-    get '/article', to: 'super#article'
+    ## 删除某个用户
+    get '/user/delete',to: 'super#delete'
+    get '/article/delete', to: 'super#article'
     get '/comment',to: 'super#comment'
+
+
+    ## 文章加为精华帖
+    get '/article/elite',to: 'super#elite'
 
   end
 end

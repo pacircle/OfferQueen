@@ -9,5 +9,7 @@ class Comment
   # field :company,type:String
   # field :post,type:String
   field :content,type:String
-  field :answerList,type: Array
+  field :avatarUrl,type:String
+  field :nickName,type: String
+  # field :answerList,type: Array
 end

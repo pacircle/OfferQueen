@@ -1,5 +1,5 @@
 class WearticleController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read,:agree,:collect]
+  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read,:agree,:collect,:delete]
 
   def index
     # 返回全部文章列表
@@ -175,6 +175,48 @@ class WearticleController < ApplicationController
     end
   end
 
+  def delete
+    openid = params[:openid] || ''
+    articleId = params[:articleId] || ''
+    if openid && openid.length > 0 && User.where(:_id => openid).length > 0
+      if articleId  && Article.where(:_id => BSON::ObjectId(articleId)).length > 0
+        article_delete = Article.where(:_id => BSON::ObjectId(articleId))
+        article_delete.each do |article|
+          if article.userId == openid
+            userss = User.all
+            ## 文章对应的评论删除
+            comments = Comment.where(:articleId => articleId)
+            comments.each do |comment|
+              userss.each do |users|
+                if users.commentList.include?(comment._id.object_id)
+                  users.commentList.delete(comment._id.object_id)
+                end
+              end
+              comment.delete
+            end
+            # 收藏/阅读/点赞文章全部删除
+            userss.each do |users|
+              if users.readList.include?(articleId)
+                users.readList.delete(articleId)
+              end
+              if users.agreeList.include?(articleId)
+                users.agreeList.delete(articleId)
+              end
+              if users.collectList.include?(articleId)
+                users.collectList.delete(articleId)
+              end
+            end
+            article.delete
+            render json: {:state => 200,:status => 'success',:msg => '文章删除成功'},callback: params[:callback]
+          else
+            render json: {:state => 400,:status => 'fail',:msg => '文章删除失败,用户无权限'},callback: params[:callback]
+          end
+        end
+      else
+        render json: {:state => 400,:status => 'fail',:msg => '文章删除失败，文章不存在'},callback: params[:callback]
+      end
+    end
+  end
 
   def read
     openid = params[:openid] || ''
@@ -215,12 +257,12 @@ class WearticleController < ApplicationController
           agreeList.push(articleId)
           user.update(:agreeList => agreeList)
         end
-        render json: {:state => 'success',:msg => '文章点赞更新成功'},callback: params[:callback]
+        render json: {:state => 200,:status => 'success',:msg => '文章点赞更新成功'},callback: params[:callback]
       else
-        render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
+        render json: {:state => 400,:status => 'error',:msg => '文章id错误'},callback: params[:callback]
       end
     else
-      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+      render json: {:state => 400,:status => 'error',:msg => '用户id错误'},callback: params[:callback]
     end
   end
 
@@ -238,12 +280,12 @@ class WearticleController < ApplicationController
           collectList.push(articleId)
           user.update(:collectList => collectList)
         end
-        render json: {:state => 'success',:msg => '文章收藏更新成功'},callback: params[:callback]
+        render json: {:state => 200,:status => 'success',:msg => '文章收藏更新成功'},callback: params[:callback]
       else
-        render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
+        render json: {:state => 400,:status =>'error',:msg => '文章id错误'},callback: params[:callback]
       end
     else
-      render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+      render json: {:state => 400,:status => 'error',:msg => '用户id错误'},callback: params[:callback]
     end
   end
 end
