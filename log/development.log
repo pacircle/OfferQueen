@@ -31247,3 +31247,363 @@ MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.002s
 Completed 200 OK in 16ms (Views: 0.2ms)
 
 
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:00:14 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+Overwriting existing field _id in class User.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+Completed 500 Internal Server Error in 38ms
+
+
+  
+BSON::ObjectId::Invalid ('' is an invalid ObjectId.):
+  
+app/controllers/wearticle_controller.rb:322:in `agree'
+Started POST "/user/article/collect" for 127.0.0.1 at 2019-01-14 01:01:18 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"collectList"=>[]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 14ms (Views: 0.6ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:01:20 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 3ms
+
+
+  
+BSON::ObjectId::Invalid ('' is an invalid ObjectId.):
+  
+app/controllers/wearticle_controller.rb:322:in `agree'
+Started POST "/user/login" for 127.0.0.1 at 2019-01-14 01:03:09 +0800
+Overwriting existing field _id in class User.
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132"}, "jsCode"=>"023SoFQU06ge512jyDQU06GAQU0SoFQ7", "appId"=>"wxdb08cdf310b2243c", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 366ms (Views: 0.4ms)
+
+
+Started POST "/article/recom" for 127.0.0.1 at 2019-01-14 01:03:11 +0800
+Processing by WearticleController#recommend as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 14ms (Views: 0.5ms)
+
+
+Started POST "/user/article/read" for 127.0.0.1 at 2019-01-14 01:03:12 +0800
+Processing by WearticleController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.004s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"readTime"=>13}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.002s
+Completed 200 OK in 20ms (Views: 0.3ms)
+
+
+Started POST "/user/article/collect" for 127.0.0.1 at 2019-01-14 01:03:14 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"collectList"=>["5c38871a09e4ac3a9a8158d9"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 10ms (Views: 0.3ms)
+
+
+Started POST "/user/article/collect" for 127.0.0.1 at 2019-01-14 01:03:15 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"collectList"=>[]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 8ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:03:16 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Completed 200 OK in 2ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:03:26 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 2ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:03:26 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 2ms (Views: 0.3ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:03:27 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Completed 200 OK in 1ms (Views: 0.2ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-14 01:04:16 +0800
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132"}, "jsCode"=>"033YwMQK00mwn92UViQK0BlwQK0YwMQy", "appId"=>"wxdb08cdf310b2243c", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+Completed 200 OK in 354ms (Views: 0.3ms)
+
+
+Started POST "/article/recom" for 127.0.0.1 at 2019-01-14 01:04:18 +0800
+Processing by WearticleController#recommend as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 16ms (Views: 0.5ms)
+
+
+Started POST "/user/article/read" for 127.0.0.1 at 2019-01-14 01:04:19 +0800
+Processing by WearticleController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.003s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"readTime"=>14}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.002s
+Completed 200 OK in 15ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:04:21 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"agree"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"agreeList"=>[]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+Completed 200 OK in 7ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:04:29 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"agree"=>1}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"agreeList"=>["5c38871a09e4ac3a9a8158d9"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+Completed 200 OK in 6ms (Views: 0.2ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-14 01:05:10 +0800
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132"}, "jsCode"=>"023VsinT0qfOKZ1q0QoT0C8onT0Vsins", "appId"=>"wxdb08cdf310b2243c", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 373ms (Views: 0.4ms)
+
+
+Started POST "/article/recom" for 127.0.0.1 at 2019-01-14 01:05:12 +0800
+Processing by WearticleController#recommend as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"elite"=>1}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+Completed 200 OK in 8ms (Views: 1.0ms)
+
+
+Started POST "/user/article/read" for 127.0.0.1 at 2019-01-14 01:05:13 +0800
+Processing by WearticleController#read as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"readTime"=>15}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.002s
+Completed 200 OK in 10ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:05:14 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"agree"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"agreeList"=>[]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+Completed 200 OK in 8ms (Views: 0.2ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:05:16 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"agree"=>1}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"agreeList"=>["5c38871a09e4ac3a9a8158d9"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 16ms (Views: 0.3ms)
+
+
+Started POST "/user/article/agree" for 127.0.0.1 at 2019-01-14 01:05:16 +0800
+Processing by WearticleController#agree as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}, "u"=>{"$set"=>{"agree"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"agreeList"=>[]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 8ms (Views: 0.4ms)
+
+
+Started POST "/user/article/collect" for 127.0.0.1 at 2019-01-14 01:05:17 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"collectList"=>["5c38871a09e4ac3a9a8158d9"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.002s
+Completed 200 OK in 9ms (Views: 0.3ms)
+
+
+Started POST "/user/article/collect" for 127.0.0.1 at 2019-01-14 01:05:18 +0800
+Processing by WearticleController#collect as */*
+  Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleId"=>"5c38871a09e4ac3a9a8158d9"}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c38871a09e4ac3a9a8158d9')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"collectList"=>[]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.000s
+Completed 200 OK in 5ms (Views: 0.2ms)
+
+

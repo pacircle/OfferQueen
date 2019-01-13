@@ -287,7 +287,7 @@ class WearticleController < ApplicationController
     openid = params[:openid] || ''
     articleId = params[:articleId] || ''
     if openid && openid.length > 0 && User.where(:_id => openid).length > 0
-      if articleId
+      if articleId && articleId.length > 0 && Article.where(:_id => BSON::ObjectId(articleId)).length > 0
         @article_read = Article.where(:_id => BSON::ObjectId(articleId))
         @article_read.each do |article|
           user = User.where(:_id => openid)
@@ -318,7 +318,7 @@ class WearticleController < ApplicationController
     openid = params[:openid] || ''
     articleId = params[:articleId] || ''
     if openid && openid.length > 0 && User.where(:_id => openid).length > 0
-      if articleId
+      if articleId && articleId.length > 0 && Article.where(:_id => BSON::ObjectId(articleId)).length > 0
         @article_agree = Article.where(:_id => BSON::ObjectId(articleId))
         @article_agree.each do |article|
           user = User.where(:_id => openid)
