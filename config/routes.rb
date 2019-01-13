@@ -53,4 +53,18 @@ Rails.application.routes.draw do
     get '/article/elite',to: 'super#elite'
 
   end
+
+
+  scope :camp do
+    get '/index',to: 'camps#create'
+    get '/all',to:'camps#all'
+    get '/answer/add',to: 'camps#answer'
+
+
+
+    post '/wechat/answer/all',to: 'camps#weall'
+  end
+
+
+
 end

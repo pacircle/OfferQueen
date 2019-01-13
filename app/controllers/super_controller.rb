@@ -51,15 +51,29 @@ class SuperController < ApplicationController
     password = params[:password] || ''
     if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
       @users = User.all
-      articles = []
+      users = []
       @users.each do |use|
-        use.articleList.each do |article|
-          art = Article.where(:_id => BSON::ObjectId(article._id.object_id))
-          articles.push(art)
+        # use.articleList.each do |article|
+        #   art = Article.where(:_id => BSON::ObjectId(article._id))
+        #   articles.push(art)
+        # end
+        # p Article.where(:userId => use._id).length
+        # articless = []
+        # Article.where(:userId => use._id).each do |art|
+        #   articless.push(art)
+        # end
+        # use[:articless] = articless
+        # p use[:articless].length
+        articles = []
+        Article.where(:userId => use._id).each do |article|
+          p article
+          articles.push(article)
         end
-        use[:articles] = articles
+        p articles
+        use.articleList = articles
+        users.push(use)
       end
-      data = {:userInfos => @users}
+      data = {:userInfos => users}
       render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => data},callback: params[:callback]
     else
       render json: {:state => 400,:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
@@ -192,6 +206,27 @@ class SuperController < ApplicationController
       if userId && userId.length > 0 && User.where(:_id => userId).length > 0
         users = User.where(:_id => userId)
         users.each do |user|
+          articles = []
+          Article.where(:userId => user._id).each do |article|
+            p article
+            article[:avatarUrl] = user.avatarUrl
+            article[:nickName] = user.nickName
+            article.time = article.time[0...article.time.length-6]
+            articles.push(article)
+          end
+          user[:articleDetail] = articles
+          # p articles
+          # user.articleList = articles
+          # user.push(use)
+          # articleList = []
+          #       articles = Article.all
+          #       articles.each do |article|
+          #         user = User.where(:_id => article.userId)
+          #         article[:avatarUrl] = user[0].avatarUrl
+          #         article[:nickName] = user[0].nickName
+          #         article.time = article.time[0...article.time.length-6]
+          #         articleList.push(article)
+          #       end
           data = {:userInfo => user}
           render json: {:state => 200,:status => 'success',:msg => '获取单个用户信息成功',:data => data},callback: params[:callback]
         end

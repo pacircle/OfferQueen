@@ -18,6 +18,18 @@ class WearticleController < ApplicationController
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
+            # p 'articleID:'
+            # p article._id.to_s
+            if user[0].agreeList.include?(article._id.to_s)
+              article[:user_agree] = true
+            else
+              article[:user_agree] = false
+            end
+            if user[0].collectList.include?(article._id.to_s)
+              article[:user_collect] = true
+            else
+              article[:user_collect] = false
+            end
             # if article.day < Time.now.day - 2
             #   article.time = article.time[0...article.time.length-6]
             # else if article.day < Time.now.day - 1
@@ -71,6 +83,17 @@ class WearticleController < ApplicationController
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
+            p article._id.to_s
+            if user[0].agreeList.include?(article._id.to_s)
+              article[:user_agree] = true
+            else
+              article[:user_agree] = false
+            end
+            if user[0].collectList.include?(article._id.to_s)
+              article[:user_collect] = true
+            else
+              article[:user_collect] = false
+            end
             articleList.push(article)
           end
           render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
@@ -83,6 +106,17 @@ class WearticleController < ApplicationController
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
+            p article._id.to_s
+            if user[0].agreeList.include?(article._id.to_s)
+              article[:user_agree] = true
+            else
+              article[:user_agree] = false
+            end
+            if user[0].collectList.include?(article._id.to_s)
+              article[:user_collect] = true
+            else
+              article[:user_collect] = false
+            end
             articleList.push(article)
           end
           render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
@@ -95,6 +129,16 @@ class WearticleController < ApplicationController
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
+            if user[0].agreeList.include?(article._id.to_s)
+              article[:user_agree] = true
+            else
+              article[:user_agree] = false
+            end
+            if user[0].collectList.include?(article._id.to_s)
+              article[:user_collect] = true
+            else
+              article[:user_collect] = false
+            end
             articleList.push(article)
           end
           render json: {:state => 'success',:msg => '文章列表获取成功',:articleInfos => articleList},callback: params[:callback]
@@ -134,6 +178,16 @@ class WearticleController < ApplicationController
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
+            if user[0].agreeList.include?(article._id.to_s)
+              article[:user_agree] = true
+            else
+              article[:user_agree] = false
+            end
+            if user[0].collectList.include?(article._id.to_s)
+              article[:user_collect] = true
+            else
+              article[:user_collect] = false
+            end
             reArticleList.push(article)
           end
           render json: {:state => 'success',:msg => '推荐文章获取成功',:recomInfos => reArticleList},callback: params[:callback]
@@ -236,14 +290,20 @@ class WearticleController < ApplicationController
       if articleId
         @article_read = Article.where(:_id => BSON::ObjectId(articleId))
         @article_read.each do |article|
-          readTime = article.readTime + 1
-          article.update(:readTime => readTime)
           user = User.where(:_id => openid)
           readList = user[0].readList
-          readList.push(articleId)
-          user.update(:readList => readList)
+          if readList.include?(articleId)
+            readTime = article.readTime + 1
+            article.update(:readTime => readTime)
+            render json: {:state => 'success',:msg => '文章多次阅读'},callback: params[:callback]
+          else
+            readTime = article.readTime + 1
+            article.update(:readTime => readTime)
+            readList.push(articleId)
+            user.update(:readList => readList)
+            render json: {:state => 'success',:msg => '文章阅读更新成功'},callback: params[:callback]
+          end
         end
-        render json: {:state => 'success',:msg => '文章阅读更新成功'},callback: params[:callback]
       else
         render json: {:state => 'error',:msg => '文章id错误'},callback: params[:callback]
       end
@@ -254,21 +314,30 @@ class WearticleController < ApplicationController
 
 
   def agree
-    # 文章点赞
+    # 文章点赞或者取消点赞
     openid = params[:openid] || ''
     articleId = params[:articleId] || ''
     if openid && openid.length > 0 && User.where(:_id => openid).length > 0
       if articleId
-        @article_read = Article.where(:_id => BSON::ObjectId(articleId))
-        @article_read.each do |article|
-          agree = article.agree + 1
-          article.update(:agree => agree)
+        @article_agree = Article.where(:_id => BSON::ObjectId(articleId))
+        @article_agree.each do |article|
           user = User.where(:_id => openid)
           agreeList = user[0].agreeList
-          agreeList.push(articleId)
-          user.update(:agreeList => agreeList)
+          if agreeList.include?(articleId)
+            ## 取消点赞
+            agree = article.agree - 1
+            article.update(:agree => agree)
+            agreeList.delete(articleId)
+            user.update(:agreeList => agreeList)
+            render json: {:state => 200, :status => 'success',:msg => '已经点过赞，取消点赞'},callback: params[:callback]
+          else
+            agree = article.agree + 1
+            article.update(:agree => agree)
+            agreeList.push(articleId)
+            user.update(:agreeList => agreeList)
+            render json: {:state => 200,:status => 'success',:msg => '文章点赞更新成功'},callback: params[:callback]
+          end
         end
-        render json: {:state => 200,:status => 'success',:msg => '文章点赞更新成功'},callback: params[:callback]
       else
         render json: {:state => 400,:status => 'error',:msg => '文章id错误'},callback: params[:callback]
       end
@@ -288,10 +357,16 @@ class WearticleController < ApplicationController
         @article_read.each do |article|
           user = User.where(:_id => openid)
           collectList = user[0].collectList
-          collectList.push(articleId)
-          user.update(:collectList => collectList)
+          if collectList.include?(articleId)
+            collectList.delete(articleId)
+            user.update(:collectList => collectList)
+            render json: {:state => 200, :status => 'success',:msg => '已经收藏过，取消收藏'},callback: params[:callback]
+          else
+            collectList.push(articleId)
+            user.update(:collectList => collectList)
+            render json: {:state => 200, :status => 'success',:msg => '文章收藏更新成功'},callback: params[:callback]
+          end
         end
-        render json: {:state => 200,:status => 'success',:msg => '文章收藏更新成功'},callback: params[:callback]
       else
         render json: {:state => 400,:status =>'error',:msg => '文章id错误'},callback: params[:callback]
       end
@@ -299,4 +374,6 @@ class WearticleController < ApplicationController
       render json: {:state => 400,:status => 'error',:msg => '用户id错误'},callback: params[:callback]
     end
   end
+
+
 end
