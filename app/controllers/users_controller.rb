@@ -36,6 +36,16 @@ class UsersController < ApplicationController
         item[:avatarUrl] = users[0].avatarUrl
         item[:nickName] = users[0].nickName
         item.time = item.time[0...item.time.length-6]
+        if users[0].agreeList.include?(item._id.to_s)
+          item[:user_agree] = true
+        else
+          item[:user_agree] = false
+        end
+        if users[0].collectList.include?(item._id.to_s)
+          item[:user_collect] = true
+        else
+          item[:user_collect] = false
+        end
         user_article.push(item)
       end
       render json: {:state => 200,:status => 'success',:msg => '获取用户文章',:articleList => user_article},callback: params[:callback]
@@ -61,6 +71,16 @@ class UsersController < ApplicationController
             item[:avatarUrl] = users[0].avatarUrl
             item[:nickName] = users[0].nickName
             item.time = item.time[0...item.time.length-6]
+            if users[0].agreeList.include?(item._id.to_s)
+              item[:user_agree] = true
+            else
+              item[:user_agree] = false
+            end
+            if users[0].collectList.include?(item._id.to_s)
+              item[:user_collect] = true
+            else
+              item[:user_collect] = false
+            end
             readLists.push(item)
           end
           # user = User.where(:_id => article_read[0].userId)
@@ -93,6 +113,16 @@ class UsersController < ApplicationController
             item[:avatarUrl] = users[0].avatarUrl
             item[:nickName] = users[0].nickName
             item.time = item.time[0...item.time.length-6]
+            if users[0].agreeList.include?(item._id.to_s)
+              item[:user_agree] = true
+            else
+              item[:user_agree] = false
+            end
+            if users[0].collectList.include?(item._id.to_s)
+              item[:user_collect] = true
+            else
+              item[:user_collect] = false
+            end
             collectLists.push(item)
           end
         end

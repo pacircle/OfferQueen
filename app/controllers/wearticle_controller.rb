@@ -215,13 +215,13 @@ class WearticleController < ApplicationController
                                   :time => Time.now,
                                   :title => title,
                                   :sub => sub,
-                                  :agree => 10,
+                                  :agree => 0,
                                   :commentList => [],
                                   :readTime => 0)
         @article.save
         use = User.where(:_id => openid)
         article = use[0].articleList
-        article.push(@article._id.object_id.to_s)
+        article.push(@article._id.to_s)
         use.update(:articleList => article)
         # use.each do |us|
         #   article = us.articleList
@@ -230,7 +230,7 @@ class WearticleController < ApplicationController
         #   us.articleList = article
         #   p us.articleList
         # end
-        articleItem = {:id => @article._id,:time => '刚刚'}
+        articleItem = {:_id => @article._id,:time => '刚刚'}
         render json: {:state => 'success',:msg => '文章上传成功',:articleItem => articleItem},callback: params[:callback]
       else
         render json: {:state => 'error',:msg => '用户不存在'},callback: params[:callback]
@@ -253,8 +253,8 @@ class WearticleController < ApplicationController
             comments = Comment.where(:articleId => articleId)
             comments.each do |comment|
               userss.each do |users|
-                if users.commentList.include?(comment._id.object_id)
-                  users.commentList.delete(comment._id.object_id)
+                if users.commentList.include?(comment._id.to_s)
+                  users.commentList.delete(comment._id.to_s)
                 end
               end
               comment.delete

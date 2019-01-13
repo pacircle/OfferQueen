@@ -158,10 +158,36 @@ class SuperController < ApplicationController
       if articleId && articleId.length > 0 && Article.where(:_id => BSON::ObjectId(articleId)).length > 0
         articless = Article.where(:_id => BSON::ObjectId(articleId))
         articless.each do |article|
+          use = User.where(:_id => article.userId)
+          articleList = use[0].agreeList
+          articleList.delete(article._id.to_s)
+          use.update(:articleList => articleList)
           article.delete
+        end
+        users = User.all
+        users.each do |user|
+          if user.readList.include?(articleId)
+            readList = user.readList
+            readList.delete(articleId)
+            user.update(:readList => readList)
+          end
+          if user.agreeList.include?(articleId)
+            agreeList = user.agreeList
+            agreeList.delete(articleId)
+            user.update(:agreeList => agreeList)
+          end
+          if user.collectList.include?(articleId)
+            collectList = user.collectList
+            collectList.delete(articleId)
+            user.update(:collectList => collectList)
+          end
         end
         comments = Comment.where(:articleId => articleId)
         comments.each do |comment|
+          # use = User.where(:_id => comment.userId)
+          # commentList = use[0].commentList
+          # commentList .delete(comment._id.to_s)
+          # use.update(:commentList => commentList)
           comment.delete
         end
         render json: {:state => 200,:status => 'success',:msg => '文章删除成功'},callback: params[:callback]
