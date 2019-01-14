@@ -1,5 +1,5 @@
 class WearticleController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read,:agree,:collect,:delete]
+  skip_before_action :verify_authenticity_token,:only => [:create,:index,:recommend,:read,:agree,:collect,:delete,:search]
 
   def index
     # 返回全部文章列表
@@ -12,6 +12,7 @@ class WearticleController < ApplicationController
         when "time"
           p 'time'
           articleList = []
+          user_now = User.where(:_id => openid)
           @articles = Article.all.sort_by{|u| u.time}.reverse()
           @articles.each do |article|
             user = User.where(:_id => article.userId)
@@ -20,12 +21,12 @@ class WearticleController < ApplicationController
             article.time = article.time[0...article.time.length-6]
             # p 'articleID:'
             # p article._id.to_s
-            if user[0].agreeList.include?(article._id.to_s)
+            if user_now[0].agreeList.include?(article._id.to_s)
               article[:user_agree] = true
             else
               article[:user_agree] = false
             end
-            if user[0].collectList.include?(article._id.to_s)
+            if user_now[0].collectList.include?(article._id.to_s)
               article[:user_collect] = true
             else
               article[:user_collect] = false
@@ -77,6 +78,7 @@ class WearticleController < ApplicationController
         when "comment"
           p 'comment'
           articleList = []
+          user_now = User.where(:_id => openid)
           @articles = Article.all.sort_by{|u| u.commentList.length}.reverse()
           @articles.each do |article|
             user = User.where(:_id => article.userId)
@@ -84,12 +86,12 @@ class WearticleController < ApplicationController
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
             p article._id.to_s
-            if user[0].agreeList.include?(article._id.to_s)
+            if user_now[0].agreeList.include?(article._id.to_s)
               article[:user_agree] = true
             else
               article[:user_agree] = false
             end
-            if user[0].collectList.include?(article._id.to_s)
+            if user_now[0].collectList.include?(article._id.to_s)
               article[:user_collect] = true
             else
               article[:user_collect] = false
@@ -100,6 +102,7 @@ class WearticleController < ApplicationController
         when "agree"
           p 'agree'
           articleList = []
+          user_now = User.where(:_id => openid)
           @articles = Article.all.sort_by{|u| u.agree}.reverse()
           @articles.each do |article|
             user = User.where(:_id => article.userId)
@@ -107,12 +110,12 @@ class WearticleController < ApplicationController
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
             p article._id.to_s
-            if user[0].agreeList.include?(article._id.to_s)
+            if user_now[0].agreeList.include?(article._id.to_s)
               article[:user_agree] = true
             else
               article[:user_agree] = false
             end
-            if user[0].collectList.include?(article._id.to_s)
+            if user_now[0].collectList.include?(article._id.to_s)
               article[:user_collect] = true
             else
               article[:user_collect] = false
@@ -123,18 +126,19 @@ class WearticleController < ApplicationController
         else
           p 'else time'
           articleList = []
+          user_now = User.where(:_id => openid)
           @articles = Article.all.sort_by{|u| u.time}.reverse()
           @articles.each do |article|
             user = User.where(:_id => article.userId)
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
-            if user[0].agreeList.include?(article._id.to_s)
+            if user_now[0].agreeList.include?(article._id.to_s)
               article[:user_agree] = true
             else
               article[:user_agree] = false
             end
-            if user[0].collectList.include?(article._id.to_s)
+            if user_now[0].collectList.include?(article._id.to_s)
               article[:user_collect] = true
             else
               article[:user_collect] = false
@@ -148,6 +152,45 @@ class WearticleController < ApplicationController
       end
     else
       render json: {:state => 'error',:msg => '用户id错误'},callback: params[:callback]
+    end
+  end
+
+
+  def search
+    openid = params[:openid] || ''
+    searchInfo = params[:searchInfo] || ''
+    if openid && openid.length>=0 && User.where(:_id => openid).length > 0
+      if searchInfo && searchInfo.length > 0
+        searchList = []
+        user_now = User.where(:_id => openid)
+        articless = Article.all
+        articless.each do |art|
+          if art.title.include?(searchInfo) || art.content.include?(searchInfo)
+            user = User.where(:_id => art.userId)
+            art[:avatarUrl] = user[0].avatarUrl
+            art[:nickName] = user[0].nickName
+            art.time = art.time[0...art.time.length-6]
+            # p 'articleID:'
+            # p article._id.to_s
+            if user_now[0].agreeList.include?(art._id.to_s)
+              art[:user_agree] = true
+            else
+              art[:user_agree] = false
+            end
+            if user_now[0].collectList.include?(art._id.to_s)
+              art[:user_collect] = true
+            else
+              art[:user_collect] = false
+            end
+            searchList.push(art)
+          end
+        end
+        render json: {:state => 200,:status => 'success',:msg => '获取搜索结果成功',:searchList => searchList},callback: params[:callback]
+      else
+        render json: {:state => 403,:status => 'fail',:msg => '搜获信息为空',:searchList => searchList},callback: params[:callback]
+      end
+    else
+      render json: {:state => 200,:status => 'error',:msg => '查找用户错误'},callback: params[:callback]
     end
   end
 
@@ -210,7 +253,7 @@ class WearticleController < ApplicationController
     if openid && openid.length > 0
       if User.where(:_id => openid).length > 0
         @article = Article.create(:userId => openid,
-                                  :elite => 1,
+                                  :elite => 0,
                                   :content => content,
                                   :time => Time.now,
                                   :title => title,

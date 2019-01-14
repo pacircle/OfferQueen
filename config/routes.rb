@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     # 获取文章接口
     post '/recom',to: 'wearticle#recommend'
     post '/all',to:'wearticle#index'
+    post 'search',to:'wearticle#search'
   end
 
   scope :super do

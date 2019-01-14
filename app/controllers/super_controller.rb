@@ -127,9 +127,27 @@ class SuperController < ApplicationController
         @user.each do |user|
           user.delete
         end
+        userss = User.all
         if Article.where(:userId => userId).length > 0
           @articles = Article.where(:userId => userId)
           @articles.each do |article|
+            userss.each do |user|
+              if user.readList.include?(article._id.to_s)
+                readList = user.readList
+                readList.delete(articleId)
+                user.update(:readList => readList)
+              end
+              if user.agreeList.include?(article._id.to_s)
+                agreeList = user.agreeList
+                agreeList.delete(articleId)
+                user.update(:agreeList => agreeList)
+              end
+              if user.collectList.include?(article._id.to_s)
+                collectList = user.collectList
+                collectList.delete(articleId)
+                user.update(:collectList => collectList)
+              end
+            end
             article.delete
           end
         end
@@ -269,7 +287,21 @@ class SuperController < ApplicationController
     ## 文章加为精华帖
     name = params[:name] || ''
     password = params[:password] || ''
-    articleId = params[:userId] || ''
+    articleId = params[:articleId] || ''
+    if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
+      p Article.where(:_id => BSON::ObjectId(articleId)).length
+      if articleId && articleId.length > 0 && Article.where(:_id => BSON::ObjectId(articleId)).length > 0
+        article = Article.where(:_id => articleId)
+        article.each do |art|
+          art.update(:elite => 1)
+        end
+        render json: {:state => 200,:status => 'success',:msg => '文章加精成功'},callback: params[:callback]
+      else
+        render json: {:state => 400, :status => 'fail',:msg => '文章加精失败'},callback: params[:callback]
+      end
+    else
+      render json: {:state => 400, :status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+    end
   end
 
 end
