@@ -1,0 +1,76 @@
+W, [2019-01-14T22:32:35.283047 #7869]  WARN -- : Overwriting existing field _id in class Answer.
+W, [2019-01-14T22:32:35.326651 #7869]  WARN -- : Overwriting existing field _id in class User.
+I, [2019-01-14T22:32:44.632266 #7869]  INFO -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] Started POST "/user/login" for 127.0.0.1 at 2019-01-14 22:32:44 +0800
+I, [2019-01-14T22:32:44.646933 #7869]  INFO -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] Processing by UsersController#create as */*
+I, [2019-01-14T22:32:44.647146 #7869]  INFO -- : [916b27f0-7b5d-4779-aa79-31eaf5430559]   Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132"}, "jsCode"=>"033tiB321dUBVP1glL321dWo321tiB36", "appId"=>"wxdb08cdf310b2243c", "user"=>{}}
+D, [2019-01-14T22:32:45.166017 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+D, [2019-01-14T22:32:45.166156 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | Topology type 'unknown' initializing.
+D, [2019-01-14T22:32:45.168123 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+D, [2019-01-14T22:32:45.168673 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | Server localhost:27017 initializing.
+D, [2019-01-14T22:32:45.175548 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+D, [2019-01-14T22:32:45.175921 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | Topology type 'unknown' changed to type 'single'.
+D, [2019-01-14T22:32:45.176143 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+D, [2019-01-14T22:32:45.176289 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+D, [2019-01-14T22:32:45.176800 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+D, [2019-01-14T22:32:45.176844 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | There was a change in the members of the 'single' topology.
+D, [2019-01-14T22:32:45.180823 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:32:45.184512 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.003s
+D, [2019-01-14T22:32:45.189888 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | localhost:27017 | offer_queen_production.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "nickName"=>"会飞@_@鱼", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/6icnoY8QHr2LgwBTGGbxOlOLlbMicbgggicQqRr8q1UkPtnqNsfkxibWTDvXWvu8fTw4JrwNUZKXYTZfW1tJ8y22IA/132", "city"=>"",...
+D, [2019-01-14T22:32:45.264459 #7869] DEBUG -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] MONGODB | localhost:27017 | offer_queen_production.insert | SUCCEEDED | 0.074s
+I, [2019-01-14T22:32:45.269124 #7869]  INFO -- : [916b27f0-7b5d-4779-aa79-31eaf5430559] Completed 200 OK in 622ms (Views: 2.0ms)
+I, [2019-01-14T22:32:46.377967 #7869]  INFO -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] Started POST "/article/recom" for 127.0.0.1 at 2019-01-14 22:32:46 +0800
+I, [2019-01-14T22:32:46.382092 #7869]  INFO -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] Processing by WearticleController#recommend as */*
+I, [2019-01-14T22:32:46.382194 #7869]  INFO -- : [f3484ab2-de6e-49e8-8579-a7c363615c82]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:32:46.384721 #7869] DEBUG -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:32:46.385362 #7869] DEBUG -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.001s
+D, [2019-01-14T22:32:46.386985 #7869] DEBUG -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"articles", "query"=>{"elite"=>1}}
+D, [2019-01-14T22:32:46.388058 #7869] DEBUG -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.001s
+I, [2019-01-14T22:32:46.388578 #7869]  INFO -- : [f3484ab2-de6e-49e8-8579-a7c363615c82] Completed 200 OK in 6ms (Views: 0.4ms)
+I, [2019-01-14T22:32:56.228134 #7869]  INFO -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] Started POST "/article/all" for 127.0.0.1 at 2019-01-14 22:32:56 +0800
+I, [2019-01-14T22:32:56.230037 #7869]  INFO -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] Processing by WearticleController#index as */*
+I, [2019-01-14T22:32:56.230137 #7869]  INFO -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleType"=>"time", "wearticle"=>{"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "articleType"=>"time"}}
+D, [2019-01-14T22:32:56.231396 #7869] DEBUG -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:32:56.231971 #7869] DEBUG -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.000s
+D, [2019-01-14T22:32:56.235011 #7869] DEBUG -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] MONGODB | localhost:27017 | offer_queen_production.find | STARTED | {"find"=>"articles", "filter"=>{}}
+D, [2019-01-14T22:32:56.236173 #7869] DEBUG -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] MONGODB | localhost:27017 | offer_queen_production.find | SUCCEEDED | 0.001s
+I, [2019-01-14T22:32:56.237119 #7869]  INFO -- : [e02a2b06-b51c-444c-9c5a-e11427587f6e] Completed 200 OK in 7ms (Views: 0.2ms)
+I, [2019-01-14T22:32:58.210436 #7869]  INFO -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] Started POST "/camp/wechat/answer/all" for 127.0.0.1 at 2019-01-14 22:32:58 +0800
+I, [2019-01-14T22:32:58.212981 #7869]  INFO -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] Processing by CampsController#weall as */*
+I, [2019-01-14T22:32:58.213090 #7869]  INFO -- : [37b8ab2b-76cc-4d13-be83-14137848d73c]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "camp"=>{}}
+D, [2019-01-14T22:32:58.214765 #7869] DEBUG -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:32:58.215326 #7869] DEBUG -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.000s
+D, [2019-01-14T22:32:58.217454 #7869] DEBUG -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] MONGODB | localhost:27017 | offer_queen_production.find | STARTED | {"find"=>"camps", "filter"=>{}}
+D, [2019-01-14T22:32:58.218102 #7869] DEBUG -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] MONGODB | localhost:27017 | offer_queen_production.find | SUCCEEDED | 0.000s
+I, [2019-01-14T22:32:58.218808 #7869]  INFO -- : [37b8ab2b-76cc-4d13-be83-14137848d73c] Completed 200 OK in 6ms (Views: 2.2ms)
+I, [2019-01-14T22:33:01.704532 #7869]  INFO -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] Started POST "/user/read" for 127.0.0.1 at 2019-01-14 22:33:01 +0800
+I, [2019-01-14T22:33:01.705572 #7869]  INFO -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] Processing by UsersController#read as */*
+I, [2019-01-14T22:33:01.705669 #7869]  INFO -- : [951fca3a-ffdb-4ce3-93aa-638301861c28]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "user"=>{}}
+D, [2019-01-14T22:33:01.706676 #7869] DEBUG -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:01.724879 #7869] DEBUG -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.018s
+D, [2019-01-14T22:33:01.726067 #7869] DEBUG -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] MONGODB | localhost:27017 | offer_queen_production.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:01.729347 #7869] DEBUG -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] MONGODB | localhost:27017 | offer_queen_production.find | SUCCEEDED | 0.003s
+I, [2019-01-14T22:33:01.733260 #7869]  INFO -- : [951fca3a-ffdb-4ce3-93aa-638301861c28] Completed 200 OK in 27ms (Views: 0.5ms)
+I, [2019-01-14T22:33:04.974917 #7869]  INFO -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] Started POST "/user/article" for 127.0.0.1 at 2019-01-14 22:33:04 +0800
+I, [2019-01-14T22:33:04.975967 #7869]  INFO -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] Processing by UsersController#article as */*
+I, [2019-01-14T22:33:04.976078 #7869]  INFO -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "user"=>{}}
+D, [2019-01-14T22:33:04.977190 #7869] DEBUG -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:04.979295 #7869] DEBUG -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.002s
+D, [2019-01-14T22:33:04.980469 #7869] DEBUG -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] MONGODB | localhost:27017 | offer_queen_production.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:04.981274 #7869] DEBUG -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] MONGODB | localhost:27017 | offer_queen_production.find | SUCCEEDED | 0.001s
+I, [2019-01-14T22:33:04.982255 #7869]  INFO -- : [3869c76a-af6c-4dec-a9f0-5f9dc5d655d4] Completed 200 OK in 6ms (Views: 0.3ms)
+I, [2019-01-14T22:33:05.791716 #7869]  INFO -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] Started POST "/user/collect" for 127.0.0.1 at 2019-01-14 22:33:05 +0800
+I, [2019-01-14T22:33:05.792719 #7869]  INFO -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] Processing by UsersController#collect as */*
+I, [2019-01-14T22:33:05.792826 #7869]  INFO -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "user"=>{}}
+D, [2019-01-14T22:33:05.794062 #7869] DEBUG -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:05.794616 #7869] DEBUG -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.000s
+D, [2019-01-14T22:33:05.795608 #7869] DEBUG -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] MONGODB | localhost:27017 | offer_queen_production.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:05.796338 #7869] DEBUG -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] MONGODB | localhost:27017 | offer_queen_production.find | SUCCEEDED | 0.001s
+I, [2019-01-14T22:33:05.797020 #7869]  INFO -- : [67614861-b3a0-4d0a-a00c-6bd5cabf610d] Completed 200 OK in 4ms (Views: 0.3ms)
+I, [2019-01-14T22:33:06.819421 #7869]  INFO -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] Started POST "/user/read" for 127.0.0.1 at 2019-01-14 22:33:06 +0800
+I, [2019-01-14T22:33:06.822007 #7869]  INFO -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] Processing by UsersController#read as */*
+I, [2019-01-14T22:33:06.822104 #7869]  INFO -- : [e93eca3c-42a1-47b0-beae-11d249ccc312]   Parameters: {"openid"=>"oX9m94sf5rxQ37n96pNFODb-HNWs", "user"=>{}}
+D, [2019-01-14T22:33:06.823196 #7869] DEBUG -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] MONGODB | localhost:27017 | offer_queen_production.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:06.823758 #7869] DEBUG -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] MONGODB | localhost:27017 | offer_queen_production.count | SUCCEEDED | 0.000s
+D, [2019-01-14T22:33:06.824775 #7869] DEBUG -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] MONGODB | localhost:27017 | offer_queen_production.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+D, [2019-01-14T22:33:06.825946 #7869] DEBUG -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] MONGODB | localhost:27017 | offer_queen_production.find | SUCCEEDED | 0.001s
+I, [2019-01-14T22:33:06.826790 #7869]  INFO -- : [e93eca3c-42a1-47b0-beae-11d249ccc312] Completed 200 OK in 5ms (Views: 0.3ms)
