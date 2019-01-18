@@ -8,6 +8,7 @@ class Camp
   field :startTime,type:String
   field :endTime,type:String
   field :answers,type:Answer
+  field :userList,type:Array
 
 
   ## 报名二维码

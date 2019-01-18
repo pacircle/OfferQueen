@@ -41440,3 +41440,243 @@ MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
 Completed 200 OK in 29ms (Views: 0.3ms)
 
 
+Started POST "/camp/user?name=admin&password=[FILTERED]" for 127.0.0.1 at 2019-01-18 14:33:46 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/camp/user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/camp/user?name=admin&password=[FILTERED]" for 127.0.0.1 at 2019-01-18 14:34:10 +0800
+Processing by CampsController#user as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.034s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 500 Internal Server Error in 247ms
+
+
+  
+NameError (undefined local variable or method `data' for #<CampsController:0x00007f8e1574bda0>):
+  
+app/controllers/camps_controller.rb:83:in `user'
+Started GET "/camp/user?name=admin&password=[FILTERED]" for 127.0.0.1 at 2019-01-18 14:44:08 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/camp/user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/camp/user/add?name=admin&password=[FILTERED]" for 127.0.0.1 at 2019-01-18 14:44:29 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.003s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 33ms (Views: 1.9ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:45:35 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+Completed 500 Internal Server Error in 10ms
+
+
+  
+NoMethodError (undefined method `push' for nil:NilClass
+Did you mean?  puts):
+  
+app/controllers/camps_controller.rb:88:in `addUser'
+Started GET "/super/article/elite?name=admin&password=[FILTERED]&order=7&content=%E8%AE%AD%E7%BB%83%E8%90%A5%E5%86%85%E5%AE%B9&description=%E8%AE%AD%E7%BB%83%E8%90%A5%E6%8F%8F%E8%BF%B0&startTime=2019-12-21&endTime=2019-12-25" for 127.0.0.1 at 2019-01-18 14:48:00 +0800
+Processing by SuperController#elite as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"7", "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Completed 500 Internal Server Error in 31ms
+
+
+  
+BSON::ObjectId::Invalid ('' is an invalid ObjectId.):
+  
+app/controllers/super_controller.rb:292:in `elite'
+Started GET "/camp/index?name=admin&password=[FILTERED]&order=7&content=%E8%AE%AD%E7%BB%83%E8%90%A5%E5%86%85%E5%AE%B9&description=%E8%AE%AD%E7%BB%83%E8%90%A5%E6%8F%8F%E8%BF%B0&startTime=2019-12-21&endTime=2019-12-25" for 127.0.0.1 at 2019-01-18 14:48:34 +0800
+Processing by CampsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"7", "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"camps", "documents"=>[{"_id"=>BSON::ObjectId('5c4176c238cad3e97edf2bc0'), "order"=>7, "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25", "answers"=>[], "userList"=>[]}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.024s
+Completed 200 OK in 51ms (Views: 0.7ms)
+
+
+Started GET "/camp/index?name=admin&password=[FILTERED]&order=8&content=%E8%AE%AD%E7%BB%83%E8%90%A5%E5%86%85%E5%AE%B9&description=%E8%AE%AD%E7%BB%83%E8%90%A5%E6%8F%8F%E8%BF%B0&startTime=2019-12-21&endTime=2019-12-25" for 127.0.0.1 at 2019-01-18 14:50:05 +0800
+Processing by CampsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"8", "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"camps", "documents"=>[{"_id"=>BSON::ObjectId('5c41771d38cad3e97edf2bc1'), "order"=>8, "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25", "answers"=>[], "userList"=>[], "signWay"=>""}], "ordered"...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.001s
+Completed 200 OK in 18ms (Views: 0.6ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:50:43 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"camps", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c41771d38cad3e97edf2bc1')}, "u"=>{"$set"=>{"userList"=>["oX9m94sf5rxQ37n96pNFODb-HNWs"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.007s
+Completed 200 OK in 14ms (Views: 0.3ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:53:03 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"camps", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c41771d38cad3e97edf2bc1')}, "u"=>{"$set"=>{"userList"=>["oX9m94sf5rxQ37n96pNFODb-HNWs", "oX9m94sf5rxQ37n96pNFODb-HNWs"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 23ms (Views: 0.3ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:53:11 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"camps", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c41771d38cad3e97edf2bc1')}, "u"=>{"$set"=>{"userList"=>["oX9m94sf5rxQ37n96pNFODb-HNWs", "oX9m94sf5rxQ37n96pNFODb-HNWs", "oX9m94sf5rxQ37n96pNFODb-HNWs"]}}, "multi"=>false, "upsert"=>false}]...
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 9ms (Views: 0.3ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:53:45 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 19ms (Views: 0.2ms)
+
+
+Started GET "/camp/index?name=admin&password=[FILTERED]&order=8&content=%E8%AE%AD%E7%BB%83%E8%90%A5%E5%86%85%E5%AE%B9&description=%E8%AE%AD%E7%BB%83%E8%90%A5%E6%8F%8F%E8%BF%B0&startTime=2019-12-21&endTime=2019-12-25" for 127.0.0.1 at 2019-01-18 14:55:07 +0800
+Processing by CampsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"8", "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"camps", "documents"=>[{"_id"=>BSON::ObjectId('5c41784b38cad3e97edf2bc2'), "order"=>8, "content"=>"训练营内容", "description"=>"训练营描述", "startTime"=>"2019-12-21", "endTime"=>"2019-12-25", "answers"=>[], "userList"=>[], "signWay"=>""}], "ordered"...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.002s
+Completed 200 OK in 11ms (Views: 0.9ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:55:31 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"camps", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c41784b38cad3e97edf2bc2')}, "u"=>{"$set"=>{"userList"=>["oX9m94sf5rxQ37n96pNFODb-HNWs"]}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 6ms (Views: 0.5ms)
+
+
+Started GET "/camp/user/add?name=admin&password=[FILTERED]&userId=oX9m94sf5rxQ37n96pNFODb-HNWs" for 127.0.0.1 at 2019-01-18 14:55:32 +0800
+Processing by CampsController#addUser as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 7ms (Views: 0.3ms)
+
+
