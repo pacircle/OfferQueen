@@ -53,6 +53,10 @@ Rails.application.routes.draw do
     ## 文章加为精华帖
     get '/article/elite',to: 'super#elite'
 
+    ## 添加轮播图信息
+    get '/rotate/add',to:'frotate#add'
+    get '/rotate/index',to: 'frotate#index'
+
   end
 
 
