@@ -60,7 +60,7 @@ Rails.application.routes.draw do
     get '/index',to: 'camps#create'
     get '/all',to:'camps#all'
     get '/answer/add',to: 'camps#answer'
-
+    get '/user/add',to: 'camps#addUser'
 
 
     post '/wechat/answer/all',to: 'camps#weall'
