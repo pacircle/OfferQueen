@@ -17,7 +17,7 @@ class CommentController < ApplicationController
       time = Time.now.to_s
       if articleId && Article.where(:_id => articleId)
         @comment = Comment.create(:userId => userId,:content => content,:articleId => articleId,:time => time[0...time.length-6],:nickName => nickName,:avatarUrl => avatarUrl)
-        comment = {:_id => @comment._id,:userId => userId,:content => content,:articleId => articleId,:time => Time.now,:nickName => nickName,:avatarUrl => avatarUrl}
+        comment = {:_id => @comment._id,:userId => userId,:content => content,:articleId => articleId,:time => time[0...time.length-6],:nickName => nickName,:avatarUrl => avatarUrl}
         @article = Article.where(:_id => BSON::ObjectId(articleId))
         @article.each do |article|
           commentList = article.commentList
