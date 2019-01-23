@@ -2616,3 +2616,27 @@ MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
 Completed 200 OK in 11ms (Views: 1.2ms)
 
 
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 21:14:15 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 21561ms
+
+
+  
+NameError (undefined local variable or method `img' for #<UsersController:0x00007f90494ff5c0>):
+  
+app/controllers/users_controller.rb:237:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 21:15:01 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 2213ms (Views: 0.8ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 21:17:49 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 1394ms (Views: 0.7ms)
+
+

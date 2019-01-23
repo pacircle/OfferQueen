@@ -234,8 +234,8 @@ class UsersController < ApplicationController
              f.write(response2.body)
              image_relative_path = "#{Rails.root}/public/Image/"+ openid + type +".jpg"
              p image_relative_path
-             p img
-             render json:{:state => 200,:status => 'success',:msg => '用户注册成功',:file => "#{Rails.root}/public/Image/"+ openid + type +".jpg" },callback: params[:callback]
+             # p img
+             render json:{:state => 200,:status => 'success',:msg => '用户获取图片成功',:file => "https://webackx.offerqueens.cn/image/"+ openid + type +".jpg" },callback: params[:callback]
              # p image_url(f)
              # # Filetest.create(:wxcode => f)
            end
