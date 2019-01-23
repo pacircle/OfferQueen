@@ -228,7 +228,25 @@ class SuperController < ApplicationController
         comments.each do |comment|
           article = Article.where(:_id => comment.articleId)
           article.each do |art|
-            art.commentList.delete(commentId)
+            comment_item = {"_id" => BSON::ObjectId(comment._id),
+                            "userId" => comment.userId.to_s,
+                            "content" => comment.content.to_s,
+                            "articleId" => comment.articleId.to_s,
+                            "time" => comment.time.to_s,
+                            "nickName" => comment.nickName.to_s,
+                            "avatarUrl" => comment.avatarUrl.to_s}
+            # art.commentList.delete(commentId)
+            # p 'comment_item'
+            # p comment_item
+            # p art.commentList.length
+            comlist = art.commentList
+            comlist.delete(comment_item)
+            p comlist.length
+            # art.commentList.each do |co|
+            #   p co === comment_item
+            #   p co
+            # end
+            art.update(:commentList => comlist)
           end
           comment.delete
         end
