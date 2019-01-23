@@ -7,7 +7,8 @@ class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token,:only => [:create,:read,:article,:collect,:getSign,:invite]
 
   # APPID = 'wx6e1ee86184594b21'
-  APPSECRET = '0bdc57d368b2a89761867ad5c395cefa'
+  # APPSECRET = '0bdc57d368b2a89761867ad5c395cefa'
+  APPSECRET = 'bc47b62ba51711164d3a95222e4055b8'
   SERVER = 'https://api.weixin.qq.com/sns/jscode2session?'
   SERVER1 = 'https://api.weixin.qq.com/cgi-bin/token?'
   SERVER2 = 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?'
@@ -150,6 +151,7 @@ class UsersController < ApplicationController
     # p response.body
     if (JSON.parse response.body)['errcode']
       error_detail = JSON.parse response.body
+      p error_detail
       # render json: {:state => 'fail',:msg => '获取id失败',:error_detail => error_detail}
       render json: {:state => 'error',:msg => '获取id失败'}
     else if (JSON.parse response.body)['openid']
@@ -187,6 +189,8 @@ class UsersController < ApplicationController
   def getSign
     p 'getsign'
     appId = params[:appId] || ''
+    openid = params[:openid] || ''
+    type = params[:type] || ''
     secretId = APPSECRET
     code = {:grant_type => 'client_credential',:appid => appId,:secret => secretId}
     uri = URI.parse(SERVER1)
@@ -209,7 +213,10 @@ class UsersController < ApplicationController
            form = {:access_token => access_token}
            uri2.query = URI.encode_www_form(form)
 
-           message = {scene: '111'}
+           scene = (openid + type).to_s
+           p scene
+           message = {scene: scene}
+           p message
            http2 = Net::HTTP.new(uri2.host, uri2.port)
            http2.use_ssl = true
            http2.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -217,14 +224,18 @@ class UsersController < ApplicationController
            request2.body = message.to_json.to_s
            response2 = http.request(request2)
            body = response2.body
-           bytes = body.split().pack("H*")
-           p bytes
+           # bytes = body.split().pack("H*")
+           # p bytes
            # p response2.body
            # render json: {:data => JSON.parse request2.body}
            # Filetest.create(:wxcode => bytes)
            # render json:{:data => Filetest.all}
-           File.open("#{Rails.root}/public/Image/wx_qcode2.jpg", "wb+") do |f|
+           File.open("#{Rails.root}/public/Image/"+ openid + type +".jpg", "wb+") do |f|
              f.write(response2.body)
+             image_relative_path = "#{Rails.root}/public/Image/"+ openid + type +".jpg"
+             p image_relative_path
+             p img
+             render json:{:state => 200,:status => 'success',:msg => '用户注册成功',:file => "#{Rails.root}/public/Image/"+ openid + type +".jpg" },callback: params[:callback]
              # p image_url(f)
              # # Filetest.create(:wxcode => f)
            end
