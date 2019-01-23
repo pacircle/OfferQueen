@@ -2127,3 +2127,492 @@ MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
 Completed 200 OK in 9ms (Views: 0.8ms)
 
 
+Started GET "/user/sign?appId=wx6e1ee86184594b21" for 127.0.0.1 at 2019-01-23 18:17:39 +0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/sign"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/user/sign?appId=wx6e1ee86184594b21" for 127.0.0.1 at 2019-01-23 18:17:55 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21"}
+Completed 200 OK in 304ms (Views: 1.1ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21" for 127.0.0.1 at 2019-01-23 18:21:44 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21"}
+No template found for UsersController#getSign, rendering head :no_content
+Completed 204 No Content in 1689ms
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-23 18:31:51 +0800
+Overwriting existing field _id in class User.
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132"}, "jsCode"=>"033t6flX0Jfl8U1i8koX0TSflX0t6fl4", "appId"=>"wx6e1ee86184594b21", "user"=>{}}
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"users", "documents"=>[{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8", "nickName"=>"会飞@_@鱼", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132", "city"=>""...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.001s
+Completed 200 OK in 382ms (Views: 0.7ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:47:46 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+No template found for UsersController#getSign, rendering head :no_content
+Completed 204 No Content in 936ms
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:48:31 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+No template found for UsersController#getSign, rendering head :no_content
+Completed 204 No Content in 921ms
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:48:46 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+No template found for UsersController#getSign, rendering head :no_content
+Completed 204 No Content in 942ms
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:54:31 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 819ms (Views: 1.5ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:54:52 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 723ms (Views: 0.7ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:55:45 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 786ms (Views: 0.7ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:57:04 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 808ms (Views: 0.6ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:59:02 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 1052ms (Views: 1.6ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 18:59:46 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 780ms (Views: 0.6ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:00:16 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 500 Internal Server Error in 1323ms
+
+
+  
+Encoding::UndefinedConversionError ("\xFF" from ASCII-8BIT to UTF-8):
+  
+app/controllers/users_controller.rb:234:in `block in getSign'
+app/controllers/users_controller.rb:232:in `open'
+app/controllers/users_controller.rb:232:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:00:34 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 500 Internal Server Error in 1522ms
+
+
+  
+Encoding::UndefinedConversionError ("\xFF" from ASCII-8BIT to UTF-8):
+  
+app/controllers/users_controller.rb:234:in `block in getSign'
+app/controllers/users_controller.rb:232:in `open'
+app/controllers/users_controller.rb:232:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:00:45 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 1254ms (Views: 0.2ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:01:28 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 923ms (Views: 0.4ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:02:12 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 1502ms (Views: 0.4ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:02:43 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 1222ms (Views: 0.2ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8" for 127.0.0.1 at 2019-01-23 19:02:55 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8"}
+Completed 200 OK in 1270ms (Views: 0.3ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:25:24 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 1453ms (Views: 0.7ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=camp" for 127.0.0.1 at 2019-01-23 19:25:54 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"camp"}
+Completed 200 OK in 1828ms (Views: 0.3ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=camp" for 127.0.0.1 at 2019-01-23 19:26:20 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"camp"}
+Completed 200 OK in 1286ms (Views: 0.2ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:26:36 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 1211ms (Views: 0.3ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-23 19:36:55 +0800
+Overwriting existing field _id in class User.
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132"}, "jsCode"=>"033zoRaw0UEMNa1MmLaw0iVYaw0zoRa6", "appId"=>"wx6e1ee86184594b21", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+Completed 200 OK in 461ms (Views: 1.8ms)
+
+
+Started POST "/user/sign" for 127.0.0.1 at 2019-01-23 19:37:21 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "user"=>{}}
+Completed 200 OK in 1364ms (Views: 0.4ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:41:08 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 1654ms
+
+
+  
+NoMethodError (undefined method `original_filename' for #<File:0x00007fc5ba150108>):
+  
+app/controllers/users_controller.rb:235:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:41:22 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 1221ms
+
+
+  
+NoMethodError (undefined method `original_filename' for #<File:0x00007fc5b7af32d0>):
+  
+app/controllers/users_controller.rb:235:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:41:32 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 1304ms (Views: 1.1ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:44:14 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 1235ms
+
+
+  
+NoMethodError (undefined method `image_path' for #<UsersController:0x00007fc5b641bf08>):
+  
+app/controllers/users_controller.rb:236:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:45:12 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 1476ms
+
+
+  
+NoMethodError (undefined method `url' for #<UsersController:0x00007fc5ba0a1090>
+Did you mean?  url_for
+               url_options
+               user_all_url
+               URI):
+  
+app/controllers/users_controller.rb:236:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:45:35 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 1142ms
+
+
+  
+ArgumentError (bad argument (expected URI object or URI string)):
+  
+app/controllers/users_controller.rb:236:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:45:55 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 500 Internal Server Error in 1342ms
+
+
+  
+NoMethodError (undefined method `to_model' for #<File:0x00007fc5b6c3f478>
+Did you mean?  to_yaml):
+  
+app/controllers/users_controller.rb:236:in `block in getSign'
+app/controllers/users_controller.rb:233:in `open'
+app/controllers/users_controller.rb:233:in `getSign'
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:51:25 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 1368ms (Views: 1.7ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:51:40 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 1161ms (Views: 0.5ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-23 19:52:06 +0800
+Overwriting existing field _id in class User.
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132"}, "jsCode"=>"033zUyN10I9NzI1WiHM10WMlN10zUyNi", "appId"=>"wx6e1ee86184594b21", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Completed 200 OK in 374ms (Views: 0.4ms)
+
+
+Started POST "/user/sign" for 127.0.0.1 at 2019-01-23 19:52:09 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "user"=>{}}
+Completed 200 OK in 1244ms (Views: 0.5ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 19:52:59 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 3021ms (Views: 0.6ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-23 19:53:15 +0800
+Overwriting existing field _id in class User.
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132"}, "jsCode"=>"023XYUdv1qntgg0V7Bdv17A4ev1XYUdi", "appId"=>"wx6e1ee86184594b21", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+Completed 200 OK in 341ms (Views: 0.3ms)
+
+
+Started POST "/user/sign" for 127.0.0.1 at 2019-01-23 19:53:18 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "user"=>{}}
+Completed 200 OK in 1281ms (Views: 0.6ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-23 19:54:19 +0800
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132"}, "jsCode"=>"033emLQj2v16ID069wQj2jGIQj2emLQ4", "appId"=>"wx6e1ee86184594b21", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.007s
+Completed 200 OK in 381ms (Views: 5.0ms)
+
+
+Started POST "/user/sign" for 127.0.0.1 at 2019-01-23 19:54:22 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "user"=>{}}
+Completed 200 OK in 1156ms (Views: 1.4ms)
+
+
+Started POST "/user/login" for 127.0.0.1 at 2019-01-23 20:00:01 +0800
+Processing by UsersController#create as */*
+  Parameters: {"userInfo"=>{"nickName"=>"会飞@_@鱼", "gender"=>0, "language"=>"zh_CN", "city"=>"", "province"=>"", "country"=>"", "avatarUrl"=>"https://wx.qlogo.cn/mmopen/vi_32/2ZJaV7icpXsfNLjIsFbvBloSAjwibt5TRnxTsn3ic8foIVrspQiaPF6Bwesu0fWiajl2UVnwrMlwu6rMWa2XcdAOa4g/132"}, "jsCode"=>"033kKtW328u2ZO0O5mS32IGDW32kKtW4", "appId"=>"wx6e1ee86184594b21", "user"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"users", "query"=>{"_id"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.003s
+Completed 200 OK in 390ms (Views: 2.3ms)
+
+
+Started POST "/user/sign" for 127.0.0.1 at 2019-01-23 20:00:23 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "user"=>{}}
+Completed 200 OK in 1305ms (Views: 0.8ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 20:06:40 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 2973ms (Views: 1.4ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 20:07:59 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 3616ms (Views: 0.4ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 20:08:33 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 4680ms (Views: 0.6ms)
+
+
+Started POST "/user/sign?appId=wx6e1ee86184594b21&openid=odTHH5W_coTEoM894khTeYQbbTL8&type=arti" for 127.0.0.1 at 2019-01-23 20:09:42 +0800
+Processing by UsersController#getSign as */*
+  Parameters: {"appId"=>"wx6e1ee86184594b21", "openid"=>"odTHH5W_coTEoM894khTeYQbbTL8", "type"=>"arti"}
+Completed 200 OK in 3715ms (Views: 0.4ms)
+
+
+Started GET "/super/index?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-01-23 20:38:46 +0800
+Processing by SuperController#index as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.004s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 57ms (Views: 3.6ms)
+
+
+Started GET "/super/user/all?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-01-23 20:39:12 +0800
+Processing by SuperController#user as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94uAQ-h-mCteRAoMYAflPFz0"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 11ms (Views: 1.8ms)
+
+
+Started GET "/super/index?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-01-23 20:40:16 +0800
+Processing by SuperController#index as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+Completed 200 OK in 13ms (Views: 2.0ms)
+
+
+Started GET "/super/article/elite?name=admin&&password=[FILTERED]&&articleId=5c483afa09e4ac68bcad41b4" for 127.0.0.1 at 2019-01-23 20:40:20 +0800
+Processing by SuperController#elite as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "articleId"=>"5c483afa09e4ac68bcad41b4"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c483afa09e4ac68bcad41b4')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"articles", "query"=>{"_id"=>BSON::ObjectId('5c483afa09e4ac68bcad41b4')}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"_id"=>BSON::ObjectId('5c483afa09e4ac68bcad41b4')}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.004s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"articles", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('5c483afa09e4ac68bcad41b4')}, "u"=>{"$set"=>{"elite"=>1}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.003s
+Completed 200 OK in 20ms (Views: 0.3ms)
+
+
+Started GET "/super/user/all?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-01-23 20:40:29 +0800
+Processing by SuperController#user as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"oX9m94uAQ-h-mCteRAoMYAflPFz0"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{"userId"=>"odTHH5W_coTEoM894khTeYQbbTL8"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 15ms (Views: 2.3ms)
+
+
+Started GET "/super/index?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-01-23 20:40:30 +0800
+Processing by SuperController#index as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"articles", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+Completed 200 OK in 11ms (Views: 1.2ms)
+
+

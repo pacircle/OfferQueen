@@ -2,3 +2,5 @@
 /.bundle
 /log/*
 /tmp/*
+
+public/Image/
