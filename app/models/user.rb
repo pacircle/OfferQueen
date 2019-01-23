@@ -11,6 +11,8 @@ class User
   field :province,type: String
   field :authority,type: Integer
   field :inviteMember,type: Integer
+  field :inviteList,type: Array
+
   field :phone,type:Integer
   field :password,type:String
   field :articleList,type:Array

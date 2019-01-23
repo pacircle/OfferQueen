@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   scope :user do
+    post '/sign',to:'users#getSign'
     post '/login', to: 'users#create'
     post '/read',to: 'users#read'
     post '/collect',to: 'users#collect'
@@ -22,6 +23,9 @@ Rails.application.routes.draw do
     ## 用户评论的添加和删除
     post '/article/comment/index',to: 'comment#create'
     post '/article/comment/delete',to: 'comment#delete'
+
+
+    get '/rotate/index',to: 'frotate#get'
   end
 
   scope :article do
@@ -52,6 +56,10 @@ Rails.application.routes.draw do
 
     ## 文章加为精华帖
     get '/article/elite',to: 'super#elite'
+
+    ## 添加轮播图信息
+    get '/rotate/add',to:'frotate#add'
+    get '/rotate/index',to: 'frotate#index'
 
   end
 
