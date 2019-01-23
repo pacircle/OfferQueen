@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9b772533-ebe6-4389-8680-09144390a179" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/comment_controller.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/comment_controller.rb" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -36,8 +37,17 @@
       <file leaf-file-name="comment_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/comment_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="-225">
+              <caret line="19" column="134" selection-start-line="19" selection-start-column="134" selection-end-line="19" selection-end-column="134" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wearticle_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/wearticle_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1839">
+              <caret line="189" column="63" selection-start-line="189" selection-start-column="63" selection-end-line="189" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -70,7 +80,6 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/config.ru" />
         <option value="$PROJECT_DIR$/app/models/comment.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/comment_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/share_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/super_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/wearticle_controller.rb" />
@@ -85,6 +94,7 @@
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/controllers/frotate_controller.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/comment_controller.rb" />
       </list>
     </option>
   </component>
@@ -99,9 +109,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="182" />
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="108" />
+    <option name="y" value="27" />
     <option name="width" value="1235" />
     <option name="height" value="802" />
   </component>
@@ -275,15 +285,15 @@
       <workItem from="1546922520309" duration="21877000" />
       <workItem from="1547126988139" duration="31987000" />
       <workItem from="1547443792645" duration="11912000" />
-      <workItem from="1547984301879" duration="17084000" />
+      <workItem from="1547984301879" duration="17461000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110566000" />
+    <option name="totallyTimeSpent" value="110943000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="182" y="23" width="1235" height="802" extended-state="0" />
+    <frame x="108" y="27" width="1235" height="802" extended-state="1" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22464375" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -576,13 +586,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/wearticle_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-815">
-          <caret line="189" column="63" selection-start-line="189" selection-start-column="63" selection-end-line="189" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/frotate_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -604,10 +607,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/wearticle_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1839">
+          <caret line="189" column="63" selection-start-line="189" selection-start-column="63" selection-end-line="189" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/comment_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="-225">
+          <caret line="19" column="134" selection-start-line="19" selection-start-column="134" selection-end-line="19" selection-end-column="134" />
         </state>
       </provider>
     </entry>
