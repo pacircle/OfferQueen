@@ -168,6 +168,8 @@ class UsersController < ApplicationController
                          :authority => 0,
                          :inviteMember => 0,
                          :inviteList => [],
+                         :campMember => 0,
+                         :campList => [],
                          :phone => '',
                          :password => '',
                          :articleList => [],
@@ -176,9 +178,10 @@ class UsersController < ApplicationController
                          :agreeList => [],
                          :readList => [],
                          :collectList => [])
-             render json: {:state => 'success',:msg => '用户注册成功',:openid => openid},callback: params[:callback]
+             render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 0,:campMember => 0},callback: params[:callback]
            else
-             render json: {:state => 'success',:msg => '用户已注册',:openid => openid},callback: params[:callback]
+             user = User.where(:_id => openid)
+             render json: {:state => 'success',:msg => '用户已注册',:openid => openid,:inviteMember => user[0].inviteMember,:campMember => user[0].campMember},callback: params[:callback]
            end
          else
            render json: {:state => 'error',:msg => '获取id失败'},callback: params[:callback]
@@ -236,6 +239,7 @@ class UsersController < ApplicationController
              p image_relative_path
              # p img
              render json:{:state => 200,:status => 'success',:msg => '用户获取图片成功',:file => "https://webackx.offerqueens.cn/image/"+ openid + type +".jpg" },callback: params[:callback]
+             # render json:{:state => 200,:status => 'success',:msg => '用户获取图片成功',:file => "http://localhost:7474/image/"+ openid + type +".jpg" },callback: params[:callback]
              # p image_url(f)
              # # Filetest.create(:wxcode => f)
            end
@@ -244,32 +248,110 @@ class UsersController < ApplicationController
   end
 
 
-  def invite_create
+  def invite
     ## 邀请复盘文章,注册用户
     openid = params[:openid] || ''
     ## 邀请方式：article || camp
-    type = params[:type] || 'article'
+    type = params[:type] || 'arti'
 
     appId = params[:appId] || ''
     secretId = APPSECRET
-    jsCode = params[:jsCode] || '0238OUK31ABo7O1Qb8M31LQWK318OUKp'
+    jsCode = params[:jsCode] || ''
     grantType = params[:grant_type] || ''
     userInfo = params[:userInfo] || {}
     code = {:appId => appId,:secret => secretId,:js_code => jsCode, :grant_type => grantType,:userInfo => userInfo}
-    self.wechatget(code) #注册新的用户
-    if openid && openid.length && User.where(:_id => openid).length > 0
-      if type === 'article'
-      else if type == 'camp'
-
-           else
-
-           end
+    op = self.wechatgetnew(code).to_s #注册新的用户或者已有用户
+    if op && op.length > 0
+      new_openid = op
+      if new_openid == openid
+        render json: {:state => 403,:status => 'fail',:msg => '不可分享给自己'},callback: params[:callback]
+      else
+        if openid && openid.length && User.where(:_id => openid).length > 0
+          user = User.where(:_id => openid)
+          if type === 'arti'
+            if user[0].inviteList.include?(new_openid)
+              render json: {:state => 200,:status => 'success',:msg => '复盘重复分享到同一用户'},callback: params[:callback]
+            else
+              inviteMember = user[0].inviteMember + 1
+              inviteList = user[0].inviteList
+              inviteList.push(new_openid)
+              user[0].update(:inviteMember => inviteMember,:inviteList => inviteList)
+              render json: {:state => 200,:status => 'success',:msg => '复盘重复到用户成功'},callback: params[:callback]
+            end
+          else if type === 'camp'
+                 if user[0].campList.include?(new_openid)
+                   render json: {:state => 200,:status => 'success',:msg => '训练营重复分享到同一用户'},callback: params[:callback]
+                 else
+                   campMember = user[0].campMember + 1
+                   campList = user[0].campList
+                   campList.push(new_openid)
+                   user[0].update(:campMember => campMember,:campList => campList)
+                   render json: {:state => 200,:status => 'success',:msg => '训练营重复到用户成功'},callback: params[:callback]
+                 end
+               else
+                 render json: {:state => 400,:status => 'fail',:msg => '二维码类型错误'},callback: params[:callback]
+               end
+          end
+        else
+          render json: {:state => 400,:status => 'fail',:msg => '邀请用户不存在'},callback: params[:callback]
+        end
       end
-    else
-
     end
+  end
 
 
+
+
+  def wechatgetnew(message)
+    uri = URI.parse(SERVER)
+    data = message
+    p data[:userInfo][:gender]
+    uri.query = URI.encode_www_form(data)
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    request = Net::HTTP::Get.new(uri.request_uri)
+    response = http.request(request)
+    # p 'response.body'
+    # p response.body
+    if (JSON.parse response.body)['errcode']
+      error_detail = JSON.parse response.body
+      p error_detail
+      # render json: {:state => 'fail',:msg => '获取id失败',:error_detail => error_detail}
+      render json: {:state => 'error',:msg => '获取id失败'}
+    else if (JSON.parse response.body)['openid']
+           backMessage = JSON.parse response.body
+           openid =  backMessage['openid']
+           if openid && openid.length >0 && User.where(:_id => openid).length == 0
+             User.create(:_id => openid,:nickName => data[:userInfo][:nickName],
+                         :avatarUrl => data[:userInfo][:avatarUrl],
+                         :city => data[:userInfo][:city],
+                         :country => data[:userInfo][:country],
+                         :gender => data[:userInfo][:gender],
+                         :language => data[:userInfo][:language],
+                         :province => data[:userInfo][:province],
+                         :authority => 0,
+                         :inviteMember => 0,
+                         :inviteList => [],
+                         :campMember => 0,
+                         :campList => [],
+                         :phone => '',
+                         :password => '',
+                         :articleList => [],
+                         :commentList => [],
+                         # :answerList => [],
+                         :agreeList => [],
+                         :readList => [],
+                         :collectList => [])
+             return openid
+           else
+             return openid
+           end
+         else
+           render json: {:state => 400,:status => 'error',:msg => '获取id失败'},callback: params[:callback]
+           return
+         end
+    end
   end
 
 end
