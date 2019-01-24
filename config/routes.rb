@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   scope :user do
     post '/sign',to:'users#getSign'
+    post '/invite',to: 'users#invite'
+
     post '/login', to: 'users#create'
     post '/read',to: 'users#read'
     post '/collect',to: 'users#collect'
