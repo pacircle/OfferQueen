@@ -253,7 +253,8 @@ class WearticleController < ApplicationController
     if openid && openid.length > 0
       if User.where(:_id => openid).length > 0
         @article = Article.create(:userId => openid,
-                                  :elite => 0,
+                                  # :elite => 0,
+                                  :elite => 1,
                                   :content => content,
                                   :time => Time.now,
                                   :title => title,
