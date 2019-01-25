@@ -180,7 +180,8 @@ class UsersController < ApplicationController
                          :agreeList => [],
                          :readList => [],
                          :collectList => [])
-             render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 0,:campMember => 0},callback: params[:callback]
+             render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 2,:campMember => 2},callback: params[:callback]
+             # render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 0,:campMember => 0},callback: params[:callback]
            else
              user = User.where(:_id => openid)
              render json: {:state => 'success',:msg => '用户已注册',:openid => openid,:inviteMember => user[0].inviteMember,:campMember => user[0].campMember},callback: params[:callback]
