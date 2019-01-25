@@ -153,7 +153,7 @@ class UsersController < ApplicationController
       error_detail = JSON.parse response.body
       p error_detail
       # render json: {:state => 'fail',:msg => '获取id失败',:error_detail => error_detail}
-      render json: {:state => 'error',:msg => '获取id失败'}
+      render json: {:state => 'error',:msg => '获取id失败',:error_detail => error_detail}
     else if (JSON.parse response.body)['openid']
            backMessage = JSON.parse response.body
            openid =  backMessage['openid']
@@ -320,7 +320,7 @@ class UsersController < ApplicationController
       error_detail = JSON.parse response.body
       p error_detail
       # render json: {:state => 'fail',:msg => '获取id失败',:error_detail => error_detail}
-      render json: {:state => 'error',:msg => '获取id失败'}
+      render json: {:state => 'error',:msg => '获取id失败',:error_detail => error_detail}
     else if (JSON.parse response.body)['openid']
            backMessage = JSON.parse response.body
            openid =  backMessage['openid']
