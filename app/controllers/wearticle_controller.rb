@@ -159,6 +159,7 @@ class WearticleController < ApplicationController
   def search
     openid = params[:openid] || ''
     searchInfo = params[:searchInfo] || ''
+    p params[:openid]
     if openid && openid.length>=0 && User.where(:_id => openid).length > 0
       if searchInfo && searchInfo.length > 0
         searchList = []
@@ -190,7 +191,7 @@ class WearticleController < ApplicationController
         render json: {:state => 403,:status => 'fail',:msg => '搜获信息为空',:searchList => searchList},callback: params[:callback]
       end
     else
-      render json: {:state => 200,:status => 'error',:msg => '查找用户错误'},callback: params[:callback]
+      render json: {:state => 400,:status => 'error',:msg => '查找用户错误'},callback: params[:callback]
     end
   end
 
