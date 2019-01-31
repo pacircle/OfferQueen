@@ -71,6 +71,7 @@ Rails.application.routes.draw do
     get '/all',to:'camps#all'
     get '/answer/add',to: 'camps#answer'
     get '/user/add',to: 'camps#addUser'
+    get '/user/all',to: 'camps#user'
 
 
     post '/wechat/answer/all',to: 'camps#weall'

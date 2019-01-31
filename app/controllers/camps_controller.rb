@@ -1,5 +1,5 @@
 class CampsController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:all,:answer, :weall,:addUser]
+  skip_before_action :verify_authenticity_token,:only => [:create,:all,:answer, :weall,:addUser,:user]
 
   def create
     p 'create'
@@ -86,13 +86,24 @@ class CampsController < ApplicationController
         if userId && userId.length > 0
           camp = camps[length - 1 ]
           userList = camp.userList
-          if userList.include?(userId)
-            render json: {:state => 403,:status => 'fail',:msg => '用户已经报名成功'},callback: params[:callback]
-          else
-            userList.push(userId)
-            camp.update(:userList => userList)
-            render json: {:state => 200,:status => 'success',:msg => '训练营添加用户成功'},callback: params[:callback]
+          addUserList = userId.split(",")
+          p addUserList
+          addUserList.each do |user|
+            if userList.include?(user)
+              p '用户已经存在'
+            else
+              userList.push(user)
+            end
           end
+          camp.update(:userList => userList)
+          render json: {:state => 200,:status => 'success',:msg => '训练营添加用户成功'},callback: params[:callback]
+          # if userList.include?(userId)
+          #   render json: {:state => 403,:status => 'fail',:msg => '用户已经报名成功'},callback: params[:callback]
+          # else
+          #   userList.push(userId)
+          #   camp.update(:userList => userList)
+          #   render json: {:state => 200,:status => 'success',:msg => '训练营添加用户成功'},callback: params[:callback]
+          # end
         else
           render json: {:state => 400,:status => 'fail',:msg => '无用户信息'},callback: params[:callback]
         end
@@ -101,6 +112,43 @@ class CampsController < ApplicationController
       end
     else
       render json: {:state => 400,:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+    end
+  end
+
+
+  def user
+    # 获取全部用户信息
+    name = params[:name] || ''
+    password = params[:password] || ''
+    if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
+      @users = User.all
+      camps = Camp.all
+      length = camps.length
+      if length > 0
+        camp = camps[length - 1 ]
+        userList = camp.userList
+        p userList
+        users = []
+        @users.each do |use|
+          if userList.include?(use._id)
+            use[:include] = '已添加'
+          else
+            use[:include] = '未添加'
+          end
+          users.push(use)
+        end
+        data = {:userInfos => users}
+        render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => data},callback: params[:callback]
+      else
+        userss = []
+        @users.each do |use|
+          userss.push(use)
+        end
+        datas = {:userInfos => userss}
+        render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => datas},callback: params[:callback]
+      end
+    else
+      render json: {:state => 400,:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 

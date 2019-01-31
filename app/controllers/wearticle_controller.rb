@@ -103,7 +103,8 @@ class WearticleController < ApplicationController
           p 'agree'
           articleList = []
           user_now = User.where(:_id => openid)
-          @articles = Article.all.sort_by{|u| u.agree}.reverse()
+          # @articles = Article.all.sort_by{|u| u.agree}.reverse()
+          @articles = Article.all.sort_by{|u| u.readTime}.reverse()
           @articles.each do |article|
             user = User.where(:_id => article.userId)
             article[:avatarUrl] = user[0].avatarUrl
