@@ -1,5 +1,5 @@
 class CampsController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:create,:all,:answer, :weall,:addUser,:user]
+  skip_before_action :verify_authenticity_token,:only => [:create,:all,:answer, :weall,:addUser,:user,:qtcode]
 
   def create
     p 'create'
@@ -148,7 +148,35 @@ class CampsController < ApplicationController
         render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => datas},callback: params[:callback]
       end
     else
-      render json: {:state => 400,:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+    end
+  end
+
+
+  def qtcode
+    if request.method == 'OPTIONS'
+      response.headers["Access-Control-Allow-Origin"] = "*"
+      response.headers['Access-Control-Request-Method'] = '*'
+      response.headers["Access-Control-Allow-Headers"] = "Access-Control-Allow-Origin,Origin,X-Requested-With,Content-type,Accept,Access-Control-Allow-Headers, Authorization, X-Requested-With,Access-Control-Allow-Origin"
+      response.headers["Access-Control-Allow-Methods"] = "PUT,POST,GET,DELETE,OPTIONS"
+      response.headers["Access-Control-Allow-Credentials"] = "true"
+      response.headers["Cache-Control"] = "no-cache"
+      p params
+      p response
+      render json: {:states => 400}
+    else if request.method == 'POST'
+           p response
+           response.headers["Access-Control-Allow-Origin"] = "*"
+           response.headers['Access-Control-Request-Method'] = '*'
+           response.headers["Access-Control-Allow-Headers"] = "Access-Control-Allow-Origin,Origin,X-Requested-With,Content-type,Accept,Access-Control-Allow-Headers, Authorization, X-Requested-With,Access-Control-Allow-Origin"
+           response.headers["Access-Control-Allow-Methods"] = "PUT,POST,GET,DELETE,OPTIONS"
+           response.headers["Access-Control-Allow-Credentials"] = "true"
+           response.headers["Cache-Control"] = "no-cache"
+           response.to_json
+           # @filesss = IO.read(file).force_encoding("ISO-8859-1").encode("utf-8", replace: nil)
+           # p @filesss
+           p 'post'
+         end
     end
   end
 
