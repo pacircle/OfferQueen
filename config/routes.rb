@@ -74,7 +74,7 @@ Rails.application.routes.draw do
     get '/user/all',to: 'camps#user'
 
 
-    match  '*qtcode',to: 'camps#qtcode',via: [:options,:post]
+    # match  '*qtcode',to: 'camps#qtcode',via: [:options,:post]
     # post  '/qtcode/add',to: 'camps#qtcode',via: [:options]
 
     post '/wechat/answer/all',to: 'camps#weall'
