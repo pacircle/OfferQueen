@@ -157,12 +157,12 @@ class SuperController < ApplicationController
             comment.delete
           end
         end
-        render json: {:status => 'success',:msg => '删除用户信息成功'},callback: params[:callback]
+        render json: {:state => 200, :status => 'success',:msg => '删除用户信息成功'},callback: params[:callback]
       else
-        render json: {:status => 'fail',:msg => '用户不存在'},callback: params[:callback]
+        render json: {:state => 400,:status => 'fail',:msg => '用户不存在'},callback: params[:callback]
       end
     else
-      render json: {:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+      render json: {:state => 400,:status=> 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
