@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     post '/article/read',to: 'wearticle#read'
     post '/article/agree',to: 'wearticle#agree'
     post '/article/collect',to: 'wearticle#collect'
+
+
+
     ## 用户评论的添加和删除
     post '/article/comment/index',to: 'comment#create'
     post '/article/comment/delete',to: 'comment#delete'
@@ -58,6 +61,8 @@ Rails.application.routes.draw do
 
     ## 文章加为精华帖
     get '/article/elite',to: 'super#elite'
+    ## 添加文章
+    get '/article/add',to: 'super#addArticle'
 
     ## 添加轮播图信息
     get '/rotate/add',to:'frotate#add'

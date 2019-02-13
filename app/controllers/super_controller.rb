@@ -1,5 +1,5 @@
 class SuperController < ApplicationController
-  skip_before_action :verify_authenticity_token,:only => [:login,:create,:delete,:user,:index,:article,:comment]
+  skip_before_action :verify_authenticity_token,:only => [:login,:create,:delete,:user,:index,:article,:comment,:addArticle]
 
 
     # def login
@@ -76,7 +76,7 @@ class SuperController < ApplicationController
       data = {:userInfos => users}
       render json: {:state => 200,:status => 'success',:msg => '获取用户信息成功',:data => data},callback: params[:callback]
     else
-      render json: {:state => 400,:state => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+      render json: {:state => 400,:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
 
@@ -321,5 +321,51 @@ class SuperController < ApplicationController
       render json: {:state => 400, :status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
     end
   end
+
+  def addArticle
+    name = params[:name] || ''
+    password = params[:password] || ''
+    openid = params[:openid] || ''
+    content = params[:content] || ''
+    sub = params[:sub] || ''
+    title = params[:title] || ''
+    if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
+      if openid && openid.length > 0
+        if User.where(:_id => openid).length > 0
+          @article = Article.create(:userId => openid,
+                                    :elite => 0,
+                                    # :elite => 1,
+                                    :content => content,
+                                    :time => Time.now,
+                                    :title => title,
+                                    :sub => sub,
+                                    :agree => 0,
+                                    :commentList => [],
+                                    :readTime => 0)
+          @article.save
+          use = User.where(:_id => openid)
+          article = use[0].articleList
+          article.push(@article._id.to_s)
+          use.update(:articleList => article)
+          # use.each do |us|
+          #   article = us.articleList
+          #   p article
+          #   article.push(@article._id.object_id)
+          #   us.articleList = article
+          #   p us.articleList
+          # end
+          articleItem = {:_id => @article._id,:time => '刚刚', :elite => 0,:title => title,:sub => sub,:agree => 0,:commentList => [],:readTime => 0}
+          render json: {:state => 200,:status => 'success',:msg => '文章上传成功',:articleItem => articleItem},callback: params[:callback]
+        else
+          render json: {:state => 400,:status => 'error',:msg => '用户不存在'},callback: params[:callback]
+        end
+      else
+        render json: {:state => 200, :status => 'error',:msg => '用户id错误'},callback: params[:callback]
+      end
+    else
+      render json: {:state => 400, :status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
+    end
+  end
+
 
 end
