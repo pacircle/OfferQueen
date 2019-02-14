@@ -166,11 +166,11 @@ class UsersController < ApplicationController
                          :language => data[:userInfo][:language],
                          :province => data[:userInfo][:province],
                          :authority => 0,
-                         :inviteMember => 2,
-                         # :inviteMember => 0,
+                         # :inviteMember => 2,审核通过后隐藏
+                         :inviteMember => 0,
                          :inviteList => [],
-                         # :campMember => 0,
-                         :campMember => 2,
+                         :campMember => 0,
+                         # :campMember => 2,
                          :campList => [],
                          :phone => '',
                          :password => '',
@@ -181,21 +181,21 @@ class UsersController < ApplicationController
                          :readList => [],
                          :collectList => [])
              ### 审核通过后隐藏
-             camps = Camp.all
-             length = camps.length
-             if length > 0
-               if openid && openid.length > 0
-                 camp = camps[length - 1 ]
-                 userList = camp.userList
-                 if userList.include?(openid)
-                   p '用户已经存在' + openid
-                 else
-                   userList.push(openid)
-                 end
-               else
-                 p '用户注册失败'
-               end
-             end
+             # camps = Camp.all
+             # length = camps.length
+             # if length > 0
+             #   if openid && openid.length > 0
+             #     camp = camps[length - 1 ]
+             #     userList = camp.userList
+             #     if userList.include?(openid)
+             #       p '用户已经存在' + openid
+             #     else
+             #       userList.push(openid)
+             #     end
+             #   else
+             #     p '用户注册失败'
+             #   end
+             # end
              ####
              render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 2,:campMember => 2},callback: params[:callback]
              # render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 0,:campMember => 0},callback: params[:callback]
@@ -351,11 +351,11 @@ class UsersController < ApplicationController
                          :language => data[:userInfo][:language],
                          :province => data[:userInfo][:province],
                          :authority => 0,
-                         # :inviteMember => 0,
-                         :inviteMember => 2,
+                         :inviteMember => 0,
+                         # :inviteMember => 2,审核通过后隐藏
                          :inviteList => [],
-                         # :campMember => 0,
-                         :campMember => 2,
+                         :campMember => 0,
+                         # :campMember => 2,
                          :campList => [],
                          :phone => '',
                          :password => '',
