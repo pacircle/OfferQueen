@@ -226,9 +226,9 @@ class WearticleController < ApplicationController
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
-            p users[0].agreeList
-            p item._id.to_s
-            p users[0].agreeList.include?(item._id.to_s)
+            p user[0].agreeList
+            p article._id.to_s
+            p user[0].agreeList.include?(article._id.to_s)
             if user[0].agreeList.include?(article._id.to_s)
               article[:user_agree] = true
             else

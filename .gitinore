@@ -1,5 +1,6 @@
 /Gemfile.lock
 
+/tmp/cache/bootsnap-load-path-cache/*
 
 /public/Image/*
 
