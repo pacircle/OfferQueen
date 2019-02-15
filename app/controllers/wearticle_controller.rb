@@ -174,7 +174,7 @@ class WearticleController < ApplicationController
             art.time = art.time[0...art.time.length-6]
             # p 'articleID:'
             # p article._id.to_s
-            p users[0].agreeList
+            p user_now[0].agreeList
             p art._id.to_s
             p user_now[0].agreeList.include?(art._id.to_s)
             if user_now[0].agreeList.include?(art._id.to_s)
