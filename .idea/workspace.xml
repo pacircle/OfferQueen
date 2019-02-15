@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b772533-ebe6-4389-8680-09144390a179" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/28/2007083685d3d3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/da/2e95ce341ca11f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/development.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/development.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/75/614dd8ef55e5d9" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-compile-cache/75/614dd8ef55e5d9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/cache/bootsnap-load-path-cache" afterDir="false" />
-    </list>
+    <list default="true" id="9b772533-ebe6-4389-8680-09144390a179" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -38,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="users_controller.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <file leaf-file-name="wearticle_controller.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/wearticle_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="204" column="22" lean-forward="true" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+            <state relative-caret-position="177">
+              <caret line="230" column="15" selection-start-line="230" selection-start-column="15" selection-end-line="230" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -116,7 +109,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="277" />
+    <option name="x" value="100" />
     <option name="y" value="23" />
     <option name="width" value="1235" />
     <option name="height" value="827" />
@@ -132,6 +125,17 @@
             <path>
               <item name="OfferQueen" type="b2602c69:ProjectViewProjectNode" />
               <item name="OfferQueen" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OfferQueen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OfferQueen" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OfferQueen" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OfferQueen" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -287,12 +291,12 @@
       <workItem from="1549430268013" duration="9267000" />
       <workItem from="1549954750196" duration="10000" />
       <workItem from="1549954838096" duration="7278000" />
-      <workItem from="1550056013722" duration="10278000" />
+      <workItem from="1550056013722" duration="11467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175691000" />
+    <option name="totallyTimeSpent" value="176880000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -304,7 +308,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="277" y="23" width="1235" height="827" extended-state="0" />
+    <frame x="267" y="23" width="1235" height="827" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50125736" side_tool="true" weight="0.6150685" />
@@ -589,17 +593,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/wearticle_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-359">
-          <caret line="230" column="21" selection-start-line="230" selection-start-column="21" selection-end-line="230" selection-end-column="21" />
+        <state relative-caret-position="2667">
+          <caret line="204" column="22" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/wearticle_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="204" column="22" lean-forward="true" selection-start-line="204" selection-start-column="22" selection-end-line="204" selection-end-column="22" />
+        <state relative-caret-position="177">
+          <caret line="230" column="15" selection-start-line="230" selection-start-column="15" selection-end-line="230" selection-end-column="15" />
         </state>
       </provider>
     </entry>

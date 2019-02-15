@@ -222,7 +222,8 @@ class WearticleController < ApplicationController
           #   }
           reArticleList = []
           reArticles.each do |article|
-            user = User.where(:_id => article.userId)
+            # user = User.where(:_id => article.userId)
+            user = User.where(:_id => openid)
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
