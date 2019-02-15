@@ -66,26 +66,26 @@ class UsersController < ApplicationController
     openid = params[:openid] || ''
     if openid && openid.length > 0 && User.where(:_id => openid).length > 0
       readLists = []
-      user = User.where(:_id => openid)
-      readList = user[0].readList
+      now_user = User.where(:_id => openid)
+      readList = now_user[0].readList
       if readList.length > 0
         readList.each do |article|
           article_read = Article.where(:_id => BSON::ObjectId(article))
           article_read.each do |item|
             p item
-            users = User.where(:_id => item.userId)
-            item[:avatarUrl] = users[0].avatarUrl
-            item[:nickName] = users[0].nickName
+            user = User.where(:_id => item.userId)
+            item[:avatarUrl] = user[0].avatarUrl
+            item[:nickName] = user[0].nickName
             item.time = item.time[0...item.time.length-6]
-            p users[0].agreeList
+            p user[0].agreeList
             p item._id.to_s
-            p users[0].agreeList.include?(item._id.to_s)
-            if users[0].agreeList.include?(item._id.to_s)
+            p user[0].agreeList.include?(item._id.to_s)
+            if now_user[0].agreeList.include?(item._id.to_s)
               item[:user_agree] = true
             else
               item[:user_agree] = false
             end
-            if users[0].collectList.include?(item._id.to_s)
+            if now_user[0].collectList.include?(item._id.to_s)
               item[:user_collect] = true
             else
               item[:user_collect] = false
@@ -112,20 +112,21 @@ class UsersController < ApplicationController
     openid = params[:openid] || ''
     if openid && openid.length > 0 && User.where(:_id => openid).length > 0
       collectLists = []
-      user = User.where(:_id => openid)
-      collectList = user[0].collectList
+      now_user = User.where(:_id => openid)
+      collectList = now_user[0].collectList
       if collectList.length > 0
         collectList.each do |article|
           article_read = Article.where(:_id => BSON::ObjectId(article))
           article_read.each do |item|
-            users = User.where(:_id => item.userId)
-            item[:avatarUrl] = users[0].avatarUrl
-            item[:nickName] = users[0].nickName
+            user = User.where(:_id => item.userId)
+            # users = User.where(:_id => item.userId)
+            item[:avatarUrl] = user[0].avatarUrl
+            item[:nickName] = user[0].nickName
             item.time = item.time[0...item.time.length-6]
-            p users[0].agreeList
+            p user[0].agreeList
             p item._id.to_s
-            p users[0].agreeList.include?(item._id.to_s)
-            if users[0].agreeList.include?(item._id.to_s)
+            p user[0].agreeList.include?(item._id.to_s)
+            if now_user[0].agreeList.include?(item._id.to_s)
               item[:user_agree] = true
             else
               item[:user_agree] = false

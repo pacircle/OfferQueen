@@ -205,6 +205,7 @@ class WearticleController < ApplicationController
     if openid && openid.length>0
       if User.where(:_id => openid).length > 0
         # 用户存在
+        now_user = User.where(:_id => openid)
         reArticles = Article.where(:elite => 1)
         if reArticles.length > 0
           # reArticless = new Array
@@ -222,20 +223,20 @@ class WearticleController < ApplicationController
           #   }
           reArticleList = []
           reArticles.each do |article|
-            # user = User.where(:_id => article.userId)
-            user = User.where(:_id => openid)
+            user = User.where(:_id => article.userId)
+            # user = User.where(:_id => openid)
             article[:avatarUrl] = user[0].avatarUrl
             article[:nickName] = user[0].nickName
             article.time = article.time[0...article.time.length-6]
-            p user[0].agreeList
-            p article._id.to_s
-            p user[0].agreeList.include?(article._id.to_s)
-            if user[0].agreeList.include?(article._id.to_s)
+            # p user[0].agreeList
+            # p article._id.to_s
+            # p user[0].agreeList.include?(article._id.to_s)
+            if now_user[0].agreeList.include?(article._id.to_s)
               article[:user_agree] = true
             else
               article[:user_agree] = false
             end
-            if user[0].collectList.include?(article._id.to_s)
+            if now_user[0].collectList.include?(article._id.to_s)
               article[:user_collect] = true
             else
               article[:user_collect] = false
