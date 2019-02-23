@@ -179,9 +179,9 @@ class UsersController < ApplicationController
                          # :authority => 0,
                          # :inviteMember => 2,
                          # 审核通过后隐藏
-                         :inviteMember => 2,
+                         :inviteMember => 0,
                          :inviteList => [],
-                         :campMember => 2,
+                         :campMember => 0,
                          # :campMember => 2,
                          :campList => [],
                          :phone => '',
@@ -209,7 +209,7 @@ class UsersController < ApplicationController
              #   end
              # end
              ####
-             render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 2,:campMember => 2},callback: params[:callback]
+             render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 0,:campMember => 0},callback: params[:callback]
              # render json: {:state => 'success',:msg => '用户注册成功',:openid => openid,:inviteMember => 0,:campMember => 0},callback: params[:callback]
            else
              user = User.where(:_id => openid)
@@ -363,11 +363,11 @@ class UsersController < ApplicationController
                          :language => data[:userInfo][:language],
                          :province => data[:userInfo][:province],
                          :authority => 0,
-                         :inviteMember => 2,
+                         :inviteMember => 0,
                          # :inviteMember => 2,
                          # 审核通过后隐藏
                          :inviteList => [],
-                         :campMember => 2,
+                         :campMember => 0,
                          # :campMember => 2,
                          :campList => [],
                          :phone => '',
