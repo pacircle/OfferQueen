@@ -29415,3 +29415,111 @@ MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
 Completed 200 OK in 16ms (Views: 0.8ms)
 
 
+Started GET "/camp/all?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-02-24 16:33:10 +0800
+Processing by CampsController#all as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.004s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 53ms (Views: 3.1ms)
+
+
+Started GET "/camp/index?name=admin&&password=[FILTERED]&&order=1&&content=%E6%B5%8B%E8%AF%95%E9%A2%98%E7%9B%AE&&description=descroption&&startTime=2019-02-24%2016:33:32&&endTime=2019-03-17%2016:33:32" for 127.0.0.1 at 2019-02-24 16:33:34 +0800
+Processing by CampsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"1", "content"=>"测试题目", "description"=>"descroption", "startTime"=>"2019-02-24 16:33:32", "endTime"=>"2019-03-17 16:33:32"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.003s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"camps", "documents"=>[{"_id"=>BSON::ObjectId('5c7256de09e4ac5bc6a7a12a'), "order"=>1, "content"=>"测试题目", "description"=>"descroption", "startTime"=>"2019-02-24 16:33:32", "endTime"=>"2019-03-17 16:33:32", "answers"=>[], "userList"=>[], "si...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.038s
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.003s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"inviteMember"=>0, "campMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.024s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94iHfoLqWvpC3aqA14W2qO9w"}, "u"=>{"$set"=>{"inviteMember"=>0, "campMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.014s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94uAQ-h-mCteRAoMYAflPFz0"}, "u"=>{"$set"=>{"inviteMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.004s
+Completed 200 OK in 160ms (Views: 0.9ms)
+
+
+Started GET "/camp/user/all?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-02-24 16:38:31 +0800
+Processing by CampsController#user as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"camps", "query"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 39ms (Views: 8.1ms)
+
+
+Started GET "/camp/all?name=admin&&password=[FILTERED]" for 127.0.0.1 at 2019-02-24 16:38:32 +0800
+Processing by CampsController#all as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"camps", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.001s
+Completed 200 OK in 8ms (Views: 4.2ms)
+
+
+Started GET "/camp/index?name=admin&&password=[FILTERED]&&order=2&&content=fff&&description=fff&&startTime=2019-03-04%2016:38:86&&endTime=2019-03-31%2016:38:86" for 127.0.0.1 at 2019-02-24 16:38:47 +0800
+Processing by CampsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"2", "content"=>"fff", "description"=>"fff", "startTime"=>"2019-03-04 16:38:86", "endTime"=>"2019-03-31 16:38:86"}
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"camps", "documents"=>[{"_id"=>BSON::ObjectId('5c72581709e4ac5bc6a7a12b'), "order"=>2, "content"=>"fff", "description"=>"fff", "startTime"=>"2019-03-04 16:38:86", "endTime"=>"2019-03-31 16:38:86", "answers"=>[], "userList"=>[], "signWay"=>"...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.072s
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94uAQ-h-mCteRAoMYAflPFz0"}, "u"=>{"$set"=>{"inviteMember"=>0, "campMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 91ms (Views: 1.0ms)
+
+
+Started GET "/camp/index?name=admin&&password=[FILTERED]&&order=3&&content=fff&&description=fff&&startTime=2019-03-04%2016:38:86&&endTime=2019-03-31%2016:38:86" for 127.0.0.1 at 2019-02-24 16:42:03 +0800
+Processing by CampsController#create as */*
+  Parameters: {"name"=>"admin", "password"=>"[FILTERED]", "order"=>"3", "content"=>"fff", "description"=>"fff", "startTime"=>"2019-03-04 16:38:86", "endTime"=>"2019-03-31 16:38:86"}
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyOpening topology=Unknown>
+MONGODB | Topology type 'unknown' initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerOpening address=localhost:27017 topology=Unknown>
+MONGODB | Server localhost:27017 initializing.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Unknown new=Single>
+MONGODB | Topology type 'unknown' changed to type 'single'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::ServerDescriptionChanged>
+MONGODB | Server description for localhost:27017 changed from 'unknown' to 'standalone'.
+MONGODB | EVENT: #<Mongo::Monitoring::Event::TopologyChanged prev=Single new=Single>
+MONGODB | There was a change in the members of the 'single' topology.
+MONGODB | localhost:27017 | offer_queen_development.count | STARTED | {"count"=>"super_users", "query"=>{"name"=>"admin"}}
+MONGODB | localhost:27017 | offer_queen_development.count | SUCCEEDED | 0.001s
+Overwriting existing field _id in class Answer.
+MONGODB | localhost:27017 | offer_queen_development.insert | STARTED | {"insert"=>"camps", "documents"=>[{"_id"=>BSON::ObjectId('5c7258db09e4ac5c326d5d44'), "order"=>3, "content"=>"fff", "description"=>"fff", "startTime"=>"2019-03-04 16:38:86", "endTime"=>"2019-03-31 16:38:86", "answers"=>[], "userList"=>[], "signWay"=>"...
+MONGODB | localhost:27017 | offer_queen_development.insert | SUCCEEDED | 0.000s
+Overwriting existing field _id in class User.
+MONGODB | localhost:27017 | offer_queen_development.find | STARTED | {"find"=>"users", "filter"=>{}}
+MONGODB | localhost:27017 | offer_queen_development.find | SUCCEEDED | 0.000s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94sf5rxQ37n96pNFODb-HNWs"}, "u"=>{"$set"=>{"campMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94iHfoLqWvpC3aqA14W2qO9w"}, "u"=>{"$set"=>{"campMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.002s
+MONGODB | localhost:27017 | offer_queen_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>"oX9m94uAQ-h-mCteRAoMYAflPFz0"}, "u"=>{"$set"=>{"campMember"=>0}}, "multi"=>false, "upsert"=>false}], "ordered"=>true}
+MONGODB | localhost:27017 | offer_queen_development.update | SUCCEEDED | 0.001s
+Completed 200 OK in 102ms (Views: 1.1ms)
+
+

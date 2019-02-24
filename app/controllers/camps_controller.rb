@@ -14,6 +14,10 @@ class CampsController < ApplicationController
     if name && password && name.length > 0 && password.length >0 && SuperUser.where(:name=> name).length > 0
       camp = Camp.create(:order => order,:content => content,:description => description,:startTime => startTime,:endTime => endTime,:answers => [],:userList => [],:signWay => signWay)
       data = {:camp => camp}
+      @camp_users = User.all
+      @camp_users.each do |user|
+        user.update(:campMember => 0)
+      end
       render json: {:state => 200,:status => 'success',:msg => '添加训练营信息成功',:data => data},callback: params[:callback]
     else
       render json: {:status => 'fail',:msg => '管理员验证失败'},callback: params[:callback]
